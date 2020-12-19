@@ -383,3 +383,4 @@ function! VisualSelection(direction, extra_filter) range
 endfunction
 inoremap jj <ESC>
 :set backspace=indent,eol,start
+set relativenumber
