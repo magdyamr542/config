@@ -1,1 +1,1 @@
-# .vimrc that i use
+# Vscode and Vim Configs i use
