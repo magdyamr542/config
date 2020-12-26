@@ -1,0 +1,47 @@
+{
+    "terminal.integrated.fontFamily": "MesloLGM Nerd Font",
+    "terminal.integrated.shell.osx": "/bin/zsh",
+    "workbench.editor.enablePreview": false,
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "files.exclude": {
+        "**/.classpath": true,
+        "**/.project": true,
+        "**/.settings":true,
+        "**/.factorypath": true
+    },
+    "workbench.colorTheme": "Visual Studio Light",
+    "vim.insertModeKeyBindings": [{
+        "before" : ["j" , "j"],
+        "after" : ["<Esc>"]
+    }],
+    "vim.normalModeKeyBindings": [
+      {
+        "before" : ["f" , "d"],
+        "after" : ["g" , "d"],
+      }
+    ],
+  "vim.easymotion": true,
+  "vim.incsearch": true,
+  "vim.useSystemClipboard": true,
+  "vim.useCtrlKeys": true,
+  "vim.hlsearch": true,
+  "vim.handleKeys":{
+    "<D-c>": false,
+  },
+  "explorer.confirmDelete": false
+,
+"editor.lineNumbers": "relative",
+"[html]": {
+  "editor.defaultFormatter": "esbenp.prettier-vscode"
+},
+"[typescript]": {
+  "editor.defaultFormatter": "esbenp.prettier-vscode"
+},
+"editor.formatOnSave": true,
+"[json]": {
+  "editor.defaultFormatter": "esbenp.prettier-vscode"
+},
+"material-icon-theme.showWelcomeMessage": false,
+"git.ignoreMissingGitWarning": true
+}
