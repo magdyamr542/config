@@ -1,1 +1,1 @@
-# Vscode and Vim Configs i use
+# Text Editing Configurations
