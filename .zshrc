@@ -115,3 +115,4 @@ ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 export PATH="/usr/local/opt/openjdk/bin:$PATH"
 set -o vi
+bindkey -M viins jj vi-cmd-mode 
