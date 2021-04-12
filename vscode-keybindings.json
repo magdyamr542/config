@@ -1,89 +1,86 @@
-// Place your key bindings in this file to override the defaultsauto[]
+// Place your key bindings in this file to override the defaults
 [
-    {
-        "key": "ctrl+right",
-        "command": "cursorWordEndRight",
-        "when": "textInputFocus"
-    },
-    {
-        "key": "alt+right",
-        "command": "-cursorWordEndRight",
-        "when": "textInputFocus"
-    },
-    {
-        "key": "ctrl+left",
-        "command": "cursorWordEndLeft"
-    },
-    {
-        "key": "left shift+cmd",
-        "command": "cursorWordPartLeftSelect",
-        "when": "textInputFocus"
-    },
-    {
-        "key": "ctrl+shift+alt+left",
-        "command": "-cursorWordPartLeftSelect",
-        "when": "textInputFocus"
-    },
-    {
-        "key": "left shift+cmd",
-        "command": "cursorWordPartRightSelect",
-        "when": "textInputFocus"
-    },
-    {
-        "key": "ctrl+shift+alt+right",
-        "command": "-cursorWordPartRightSelect",
-        "when": "textInputFocus"
-    },
-    {
-        "key": "cmd+t",
-        "command": "workbench.action.terminal.toggleTerminal"
-    },
-    {
-        "key": "ctrl+`",
-        "command": "-workbench.action.terminal.toggleTerminal"
-    },
-    {
-        "key": "right shift+cmd",
-        "command": "cursorWordEndRightSelect",
-        "when": "textInputFocus"
-    },
-    {
-        "key": "shift+alt+right",
-        "command": "-cursorWordEndRightSelect",
-        "when": "textInputFocus"
-    },
-    {
-        "key": "shift+cmd+left",
-        "command": "-cursorHomeSelect",
-        "when": "textInputFocus"
-    },
-    {
-        "key": "shift+alt+right",
-        "command": "cursorWordRightSelect"
-    },
-    {
-        "key": "alt+right",
-        "command": "cursorWordRight"
-    },
-    {
-        "key": "ctrl+space",
-        "command": "editor.action.triggerSuggest",
-        "when": "editorHasCompletionItemProvider && textInputFocus && !editorReadonly"
-    },
-    {
-        "key": "ctrl+space",
-        "command": "-editor.action.triggerSuggest",
-        "when": "editorHasCompletionItemProvider && textInputFocus && !editorReadonly"
-    },
-    {
-        "key": "alt+escape",
-        "command": "-editor.action.triggerSuggest",
-        "when": "editorHasCompletionItemProvider && textInputFocus && !editorReadonly"
-    }
-    ,
-    {
-        "key": "tab",
-        "command": "-extension.vim_tab",
-        "when": "editorFocus && vim.active && !inDebugRepl && vim.mode != 'Insert'"
-    }
+  {
+    "key": "ctrl+right",
+    "command": "cursorWordEndRight",
+    "when": "textInputFocus"
+  },
+  {
+    "key": "alt+right",
+    "command": "-cursorWordEndRight",
+    "when": "textInputFocus"
+  },
+  {
+    "key": "ctrl+left",
+    "command": "cursorWordEndLeft"
+  },
+  {
+    "key": "ctrl+shift+alt+left",
+    "command": "-cursorWordPartLeftSelect",
+    "when": "textInputFocus"
+  },
+  {
+    "key": "ctrl+shift+alt+right",
+    "command": "-cursorWordPartRightSelect",
+    "when": "textInputFocus"
+  },
+  { 
+    "key": "escape",      
+    "command": "removeSecondaryCursors",
+    "when": "editorHasMultipleSelections && textInputFocus" 
+  },
+  {
+    "key": "ctrl+t",
+    "command": "workbench.action.terminal.toggleTerminal"
+  },
+  {
+    "key": "ctrl+`",
+    "command": "-workbench.action.terminal.toggleTerminal"
+  },
+  {
+    "key": "shift+alt+right",
+    "command": "-cursorWordEndRightSelect",
+    "when": "textInputFocus"
+  },
+  {
+    "key": "shift+cmd+left",
+    "command": "-cursorHomeSelect",
+    "when": "textInputFocus"
+  },
+  {
+    "key": "shift+alt+right",
+    "command": "cursorWordRightSelect"
+  },
+  {
+    "key": "alt+right",
+    "command": "cursorWordRight"
+  },
+  {
+    "key": "ctrl+space",
+    "command": "editor.action.triggerSuggest",
+    "when": "editorHasCompletionItemProvider && textInputFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+space",
+    "command": "-editor.action.triggerSuggest",
+    "when": "editorHasCompletionItemProvider && textInputFocus && !editorReadonly"
+  },
+  {
+    "key": "alt+escape",
+    "command": "-editor.action.triggerSuggest",
+    "when": "editorHasCompletionItemProvider && textInputFocus && !editorReadonly"
+  },
+  {
+    "key": "tab",
+    "command": "-extension.vim_tab",
+    "when": "editorFocus && vim.active && !inDebugRepl && vim.mode != 'Insert'"
+  },
+  {
+    "key": "ctrl+shift+t",
+    "command": "workbench.action.terminal.new"
+  },
+  {
+    "key": "ctrl+shift+`",
+    "command": "-workbench.action.terminal.new"
+  }
 ]
