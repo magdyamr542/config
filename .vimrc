@@ -96,7 +96,7 @@ set ignorecase
 set smartcase
 
 " Highlight search results
-set hlsearch
+set nohlsearch
 
 " Makes search act like search in modern browsers
 set incsearch 
@@ -384,3 +384,11 @@ endfunction
 inoremap jj <ESC>
 :set backspace=indent,eol,start
 set relativenumber
+nnoremap <C-y> "+y
+vnoremap <C-y> "+y
+nnoremap <C-p> "+gP
+vnoremap <C-p> "+gP
+nnoremap <Tab> >>_
+vnoremap <Tab> >gv
+
+
