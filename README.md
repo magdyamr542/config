@@ -1,1 +1,1 @@
-# Text Editing Configurations
+# Config stuff
