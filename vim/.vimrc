@@ -139,12 +139,11 @@ if $COLORTERM == 'gnome-terminal'
     set t_Co=256
 endif
 
-try
-    colorscheme desert
-catch
-endtry
+"try
+"    colorscheme desert
+"catch
+"endtry
 
-set background=dark
 
 " Set extra options when running in GUI mode
 if has("gui_running")
@@ -383,12 +382,46 @@ function! VisualSelection(direction, extra_filter) range
 endfunction
 inoremap jj <ESC>
 :set backspace=indent,eol,start
+
 set relativenumber
+
+" mappings for easy intending
 nnoremap <C-y> "+y
 vnoremap <C-y> "+y
 nnoremap <C-p> "+gP
 vnoremap <C-p> "+gP
 nnoremap <Tab> >>_
 vnoremap <Tab> >gv
+
+set rtp+=/usr/local/opt/fzf
+
+" install any vim plugins this way
+" python extension
+call plug#begin('~/.vim/plugged')
+Plug 'davidhalter/jedi-vim'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'sbdchd/neoformat'
+Plug 'pangloss/vim-javascript'    
+Plug 'leafgarland/typescript-vim' 
+Plug 'maxmellon/vim-jsx-pretty'   
+Plug 'morhetz/gruvbox'
+Plug 'kien/ctrlp.vim'
+Plug 'scrooloose/nerdtree'
+call plug#end()
+
+colorscheme gruvbox
+
+nnoremap <leader>n :NERDTreeFocus<CR>
+nnoremap <C-n> :NERDTree<CR>
+nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <C-f> :NERDTreeFind<CR>
+
+let g:formatter_yapf_style = 'black'
+let g:coc_global_extensions = [ 'coc-tsserver' ]
+
+
+
+
+
 
 
