@@ -1,1 +1,1 @@
-# Config stuff
+# Config files
