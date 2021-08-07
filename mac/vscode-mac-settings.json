@@ -1,131 +1,168 @@
 {
-    "terminal.integrated.fontFamily": "MesloLGM Nerd Font",
-    "workbench.editor.enablePreview": false,
-    "editor.suggestSelection": "first",
-    "terminal.integrated.shell.osx": "/bin/zsh",
-    "bashIde.explainshellEndpoint": "http://localhost:5000",
-    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-    "terminal.integrated.allowChords": false,
-    "terminal.integrated.drawBoldTextInBrightColors": false,
-    "terminal.integrated.experimentalLinkProvider": false,
-    "terminal.integrated.rendererType": "auto",
-    "workbench.iconTheme": "material-icon-theme",
-    "typescript.preferences.importModuleSpecifier": "relative",
-    "files.exclude": {
-        "**/.classpath": true,
-        "**/.factorypath": true,
-        "**/.project": true,
-        "**/.settings": true
+  "terminal.integrated.fontFamily": "MesloLGM Nerd Font",
+  "editor.fontWeight": "400",
+  "workbench.editor.enablePreview": false,
+  "vimFindHighlight.charPrimaryColor": "green",
+  "vimFindHighlight.charSecondaryColor": "red",
+  "vimFindHighlight.charFontWeight": "600",
+  "editor.suggestSelection": "first",
+  "terminal.integrated.defaultProfile.osx": "zsh",
+  "terminal.integrated.profiles.osx": {
+    "bash": {
+      "path": "bash",
+      "args": ["-l"],
+      "icon": "terminal-bash"
     },
-    "workbench.colorTheme": "Visual Studio Light",
-    "vim.insertModeKeyBindings": [
-        {
-            "before": [
-                "j",
-                "j"
-            ],
-            "after": [
-                "<Esc>"
-            ]
-        }
-    ],
-    "vim.normalModeKeyBindings": [
-        {
-            "before": [
-                "f",
-                "d"
-            ],
-            "after": [
-                "g",
-                "d"
-            ],
-        }
-    ],
-    "vim.normalModeKeyBindingsNonRecursive": [
-        {
-            "before": [
-                "<Esc>"
-            ],
-            "commands": [
-                ":nohl"
-            ],
-        }
-    ],
-    "vim.easymotion": true,
-    "vim.incsearch": true,
-    "vim.useSystemClipboard": true,
-    "vim.useCtrlKeys": true,
-    "vim.hlsearch": true,
-    "vim.handleKeys": {
-        "<D-c>": false,
+    "zsh": {
+      "path": "zsh",
+      "args": ["-l"]
     },
-    "editor.codeActionsOnSave": {
-        "source.fixAll": true
+    "fish": {
+      "path": "fish",
+      "args": ["-l"]
     },
-    "explorer.confirmDelete": false,
-    "editor.lineNumbers": "relative",
-    "[html]": {
-        "editor.defaultFormatter": "vscode.html-language-features"
+    "tmux": {
+      "path": "tmux",
+      "icon": "terminal-tmux"
     },
-    "[typescript]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "pwsh": {
+      "path": "pwsh",
+      "icon": "terminal-powershell"
+    }
+  },
+  "bashIde.explainshellEndpoint": "http://localhost:5000",
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "terminal.integrated.allowChords": false,
+  "terminal.integrated.drawBoldTextInBrightColors": false,
+  "terminal.integrated.experimentalLinkProvider": false,
+  "typescript.preferences.importModuleSpecifier": "relative",
+  "files.exclude": {
+    "**/.classpath": true,
+    "**/.factorypath": true,
+    "**/.project": true,
+    "**/.settings": true
+  },
+  "vim.visualModeKeyBindings": [
+    {
+      "before": ["p"],
+      "after": ["p", "g", "v", "y"]
+    }
+  ],
+  "vim.insertModeKeyBindings": [
+    {
+      "before": ["j", "j"],
+      "after": ["<Esc>"]
+    }
+  ],
+  "vim.normalModeKeyBindings": [
+    {
+      "before": ["<C-n>"],
+      "commands": [":nohl"]
     },
-    "editor.formatOnSave": true,
-    "[json]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    {
+      "before": ["f", "d"],
+      "after": ["g", "d"]
     },
-    "material-icon-theme.showWelcomeMessage": false,
-    "git.ignoreMissingGitWarning": true,
-    // The number of spaces a tab is equal to. This setting is overridden
-    // based on the file contents when `editor.detectIndentation` is true.
-    "editor.tabSize": 4,
-    "editor.detectIndentation": false,
-    // Insert spaces when pressing Tab. This setting is overriden
-    // based on the file contents when `editor.detectIndentation` is true.
-    "editor.insertSpaces": true,
-    // When opening a file, `editor.tabSize` and `editor.insertSpaces`
-    // will be detected based on the file contents. Set to false to keep
-    // the values you've explicitly set, above.
-    "python.languageServer": "Pylance",
-    "todo-tree.tree.showScanModeButton": false,
-    "typescript.updateImportsOnFileMove.enabled": "always",
-    "files.associations": {
-        "*.html": "html"
-    },
-    "angular.experimental-ivy": true,
-    "python.pythonPath": "/usr/local/bin/python3",
-    "diffEditor.ignoreTrimWhitespace": false,
-    "workbench.editorAssociations": [
-        {
-            "viewType": "jupyter.notebook.ipynb",
-            "filenamePattern": "*.ipynb"
-        }
-    ],
-    "todo-tree.general.tags": [
-        "BUG",
-        "HACK",
-        "FIXME",
-        "TODO",
-        "XXX",
-        "[ ]",
-        "[x]"
-    ],
-    "todo-tree.regex.regex": "(//|#|<!--|;|/\\*|^|^\\s*(-|\\d+.))\\s*($TAGS)",
-    "[shellscript]": {
-        "editor.defaultFormatter": "foxundermoon.shell-format"
-    },
-    "[dockerfile]": {
-        "editor.defaultFormatter": "ms-azuretools.vscode-docker"
-    },
-    "javascript.updateImportsOnFileMove.enabled": "always",
-    "mssql.connections": [
-        {
-            "server": "{{put-server-name-here}}",
-            "database": "{{put-database-name-here}}",
-            "user": "{{put-username-here}}",
-            "password": "{{put-password-here}}"
-        }
-    ],
-    "jupyter.askForKernelRestart": false,
-    "jupyter.interactiveWindowMode": "perFile"
+    {
+      "before": ["Y"],
+      "after": ["y", "$"]
+    }
+  ],
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": ["<Esc>"],
+      "commands": [":nohl"]
+    }
+  ],
+  "vim.easymotion": true,
+  "vim.incsearch": true,
+  "vim.useSystemClipboard": true,
+  "vim.useCtrlKeys": true,
+  "vim.hlsearch": true,
+  "vim.handleKeys": {
+    "<D-c>": false
+  },
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true
+  },
+  "explorer.confirmDelete": false,
+  "editor.lineNumbers": "relative",
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "material-icon-theme.showWelcomeMessage": false,
+  "git.ignoreMissingGitWarning": true,
+  // The number of spaces a tab is equal to. This setting is overridden
+  // based on the file contents when `editor.detectIndentation` is true.
+  "editor.tabSize": 8,
+  "editor.detectIndentation": false,
+  // Insert spaces when pressing Tab. This setting is overriden
+  // based on the file contents when `editor.detectIndentation` is true.
+  "editor.insertSpaces": false,
+  // When opening a file, `editor.tabSize` and `editor.insertSpaces`
+  // will be detected based on the file contents. Set to false to keep
+  // the values you've explicitly set, above.
+  "python.languageServer": "Pylance",
+  "python.formatting.provider": "black",
+  "todo-tree.tree.showScanModeButton": false,
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "files.associations": {
+    "*.html": "html"
+  },
+  "angular.experimental-ivy": true,
+  "python.pythonPath": "/usr/local/bin/python3",
+  "diffEditor.ignoreTrimWhitespace": false,
+  "workbench.editorAssociations": {
+    "*.ipynb": "jupyter-notebook"
+  },
+  "todo-tree.general.tags": [
+    "BUG",
+    "HACK",
+    "FIXME",
+    "TODO",
+    "XXX",
+    "[ ]",
+    "[x]"
+  ],
+  "todo-tree.regex.regex": "(//|#|<!--|;|/\\*|^|^\\s*(-|\\d+.))\\s*($TAGS)",
+  "[shellscript]": {
+    "editor.defaultFormatter": "shakram02.bash-beautify"
+  },
+  "[dockerfile]": {
+    "editor.defaultFormatter": "ms-azuretools.vscode-docker"
+  },
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "mssql.connections": [
+    {
+      "server": "{{put-server-name-here}}",
+      "database": "{{put-database-name-here}}",
+      "user": "{{put-username-here}}",
+      "password": "{{put-password-here}}"
+    }
+  ],
+  "jupyter.askForKernelRestart": false,
+  "jupyter.interactiveWindowMode": "perFile",
+  "latex-workshop.view.pdf.viewer": "tab",
+  "editor.cursorStyle": "line",
+  "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
+  "editor.wordWrap": "off",
+  "vsicons.dontShowNewVersionMessage": true,
+  "security.workspace.trust.untrustedFiles": "open",
+  "docker.showStartPage": false,
+  "python.defaultInterpreterPath": "/usr/local/bin/python3",
+  "editor.inlineSuggest.enabled": true,
+  "notebook.cellToolbarLocation": {
+    "default": "right",
+    "jupyter-notebook": "left"
+  },
+  "workbench.editor.untitled.hint": "hidden",
+  "workbench.colorTheme": "Visual Studio Light"
 }
