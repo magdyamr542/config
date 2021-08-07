@@ -1,5 +1,8 @@
 {
   "terminal.integrated.fontFamily": "MesloLGM Nerd Font",
+  "vim.vimrc.enable": true,
+  "vim.vimrc.path": "$HOME/.config/config/mac/.vimrc",
+  "vim.leader": "<Space>",
   "editor.fontWeight": "400",
   "workbench.editor.enablePreview": false,
   "vimFindHighlight.charPrimaryColor": "green",
