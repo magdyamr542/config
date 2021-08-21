@@ -6,6 +6,6 @@ gad () {
 }
 
 gbname () {
-  git branch -r | grep "$1"
+  git branch  | grep "$1"
 }
 
