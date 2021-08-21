@@ -4,3 +4,8 @@
 gad () {
   git add "*$1*"
 }
+
+gbname () {
+  git branch -r | grep "$1"
+}
+

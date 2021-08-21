@@ -126,6 +126,6 @@ export EDITOR="$VISUAL"
 bindkey jj vi-cmd-mode 
 export PATH="$HOME/bin:$PATH"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-[ -f ~/.alises.sh ] && source ~/.aliases.sh
+[ -f ~/.aliases.sh ] && source ~/.aliases.sh
 [ -f ~/.funcs.sh ] && source ~/.funcs.sh
 

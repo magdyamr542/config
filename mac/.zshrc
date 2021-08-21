@@ -116,5 +116,6 @@ ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
 export PATH="/usr/local/opt/openjdk/bin:$PATH"
 set -o vi
 bindkey -M viins jj vi-cmd-mode 
+export EDITOR="nvim"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

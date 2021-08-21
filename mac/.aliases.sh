@@ -20,3 +20,4 @@ alias fzf="fzf --preview 'bat --style=numbers --color=always --line-range :500 {
 #Github Api Repos
 alias createRepo="bash  ~/Desktop/scripts/create-github-repo/createRepo.sh"
 alias deleteRepo="bash ~/Desktop/scripts/delete-github-repo/deleteRepo.sh"
+
