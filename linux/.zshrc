@@ -77,7 +77,6 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   git
-  dotenv
   zsh-autosuggestions
   zsh-syntax-highlighting
   docker
@@ -88,6 +87,9 @@ plugins=(
 )
 source $ZSH/oh-my-zsh.sh
 ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=245'
+
+
 
 # User configuration
 
@@ -114,12 +116,16 @@ ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-source $HOME/.aliases.sh
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 [[ -s /home/amr/.autojump/etc/profile.d/autojump.sh ]] && source /home/amr/.autojump/etc/profile.d/autojump.sh
 autoload -U compinit && compinit
-export VISUAL=vim
+export VISUAL=nvim
 export EDITOR="$VISUAL"
+# vim
 bindkey jj vi-cmd-mode 
-    
+export PATH="$HOME/bin:$PATH"
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[ -f ~/.alises.sh ] && source ~/.aliases.sh
+[ -f ~/.funcs.sh ] && source ~/.funcs.sh
+
