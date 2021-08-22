@@ -1,0 +1,51 @@
+{
+  "empty callback": {
+    "prefix": "cb",
+    "body": ["($1) => {$0}"],
+    "description": "Callback"
+  },
+
+  "wait function": {
+    "prefix": "wt",
+    "body": [
+      "const waitInSeconds = (delay: number) => { return new Promise((resolve) => setTimeout(resolve, delay));};"
+    ],
+    "description": "Wait Function"
+  },
+
+  "public async method": {
+    "prefix": "psync",
+    "body": ["public async $1 ($2) : Promise<$3> {$4}"],
+    "description": "Public async method"
+  },
+
+  "logging": {
+    "prefix": "lg",
+    "body": ["this.logger.log($1 , this.logContext);$0"],
+    "description": "logging"
+  },
+
+  "arrow function": {
+    "prefix": "arrow",
+    "body": ["export const $1 = ($2) => {$3}"],
+    "description": "Arrow Function"
+  },
+
+  "Promise Result": {
+    "prefix": "pr",
+    "body": ["Promise<$1>$0"],
+    "description": "Promise Result"
+  },
+
+  "Generate Interface": {
+    "prefix": "iface",
+    "body": ["export interface $1 {", "$2", "}"],
+    "description": "Generating an interface for typescript"
+  },
+
+  "Generate Generic Interface": {
+    "prefix": "giface",
+    "body": ["export interface $1<$2> {", "$3", "}"],
+    "description": "Generating a generic interface for typescript"
+  }
+}
