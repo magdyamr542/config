@@ -7,8 +7,10 @@ alias de="setxkbmap de"
 alias en="setxkbmap us"
 alias rootDir='cd $(git rev-parse --show-toplevel)'
 alias t='tree'
+
 # Git
 alias gcm='git commit -m'
+alias gpl='git pull'
 
 #Vim
 alias vim="nvim"
