@@ -27,3 +27,8 @@ cpfile () {
   fi
 
 }
+
+# history grep faster
+hgrep () {
+  history | grep $1
+}
