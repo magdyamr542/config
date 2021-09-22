@@ -5,6 +5,7 @@ alias fzf="fzf --preview 'bat --style=numbers --color=always --line-range :500 {
 alias clrScreenshots="rm ~/Pictures/*"
 alias de="setxkbmap de"
 alias en="setxkbmap us"
+alias ar="setxkbmap ar"
 alias rootDir='cd $(git rev-parse --show-toplevel)'
 alias t='tree'
 
