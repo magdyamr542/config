@@ -28,7 +28,7 @@ fi
 
 # install vscode if it does not exist
 if ! doesCommandExist code; then
-  echo "Could not find VSCODE. installing it ..."
+  echo "Could not find vscode. installing it ..."
   if [[ $isLinux -eq 0  ]]; then
     source ./vscode-install-linux.sh
   else
@@ -45,3 +45,15 @@ if [[ ! -f "extensions.txt" ]];
     echo  "Installing vscode extensions"
     cat extensions.txt | xargs -L 1 code --install-extension --force
 fi
+
+# install tmux
+if ! doesCommandExist tmux; then
+  echo "Could not find tmux. installing it ..."
+  if [[ $isLinux -eq 0  ]]; then
+    source ./tmux-install-linux.sh
+  else
+    brew install tmux
+  fi
+fi
+
+#TODO: add tmux config file to where they belong
