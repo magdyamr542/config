@@ -9,12 +9,12 @@ function doesCommandExist() {
   fi
 }
 
+
 # detect os
 isLinux=1
 if [[ uname  -eq "Linux" ]]; then
     isLinux=0
 fi
-
 
 
 # update packages
@@ -26,18 +26,17 @@ if [[ $isLinux -eq 0  ]]; then
 fi
 
 
-
+# install vscode if it does not exist
 if ! doesCommandExist code; then
   echo "Could not find VSCODE. installing it ..."
   if [[ $isLinux -eq 0  ]]; then
-    echo  install it linux
+    source ./vscode-install-linux.sh
   else
-    echo "mac install vscode"
     brew install --cask visual-studio-code
   fi
 fi
 
-# install vscode extensions
+# install vscode extensions.
 if [[ ! -f "extensions.txt" ]]; 
   then
     echo  "No ./extensions.txt file. ABORT"
