@@ -42,5 +42,6 @@ if [[ ! -f "extensions.txt" ]];
     echo  "No ./extensions.txt file. ABORT"
     exit 1
   else
+    echo  "Installing vscode extensions"
     cat extensions.txt | xargs -L 1 code --install-extension --force
 fi
