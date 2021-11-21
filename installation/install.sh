@@ -1,13 +1,5 @@
 #!/bin/bash
 
-function isLinux() {
-  if [[ uname == "Linux" ]]; then
-    return 0
-  else
-    return 1
-  fi
-}
-
 function doesCommandExist() {
   if ! command -v $1 &> /dev/null ;
   then
@@ -17,11 +9,28 @@ function doesCommandExist() {
   fi
 }
 
+# detect os
+isLinux=1
+if [[ uname  -eq "Linux" ]]; then
+    isLinux=0
+fi
+
+
+
+# update packages
+if [[ $isLinux -eq 0  ]]; then
+  echo "Updating packages ..."
+  sudo apt-get update
+  echo "Upgrading packages ..."
+  sudo apt-get upgrade -y
+fi
+
+
 
 if ! doesCommandExist code; then
   echo "Could not find VSCODE. installing it ..."
-  if isLinux; then
-    echo 
+  if [[ $isLinux -eq 0  ]]; then
+    echo  install it linux
   else
     echo "mac install vscode"
     brew install --cask visual-studio-code
