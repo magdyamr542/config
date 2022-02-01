@@ -101,9 +101,11 @@ set -o vi
 
 bindkey -M viins jj vi-cmd-mode 
 
-export FZF_DEFAULT_COMMAND='fd --type file --follow --hidden --exclude .git'
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+export FZF_DEFAULT_COMMAND='fd --type file --follow --hidden --exclude .git'
+export FZF_CTRL_T_COMMAND='fd --type file --follow --hidden --exclude .git'
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"

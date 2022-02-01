@@ -126,6 +126,9 @@ export EDITOR="$VISUAL"
 bindkey jj vi-cmd-mode 
 export PATH="$HOME/bin:$PATH"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export FZF_DEFAULT_COMMAND='fd --type file --follow --hidden --exclude .git'
+export FZF_CTRL_T_COMMAND='fd --type file --follow --hidden --exclude .git'
+
 [ -f ~/.aliases.sh ] && source ~/.aliases.sh
 [ -f ~/.funcs.sh ] && source ~/.funcs.sh
 
