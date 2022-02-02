@@ -21,3 +21,8 @@ alias fzf="fzf --preview 'bat --style=numbers --color=always --line-range :500 {
 alias createRepo="bash  ~/Desktop/scripts/create-github-repo/createRepo.sh"
 alias deleteRepo="bash ~/Desktop/scripts/delete-github-repo/deleteRepo.sh"
 
+alias genc="/usr/local/Cellar/genact/0.11.0/bin/genact"
+alias vim="nvim"
+# Git
+alias gpl="git pull"
+alias gcm="git commit -m"
