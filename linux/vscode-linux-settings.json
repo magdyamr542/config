@@ -48,10 +48,18 @@
     "**/.settings": true
   },
   "workbench.colorTheme": "Visual Studio Light",
-  "vim.visualModeKeyBindingsNonRecursive": [
+  "vim.visualModeKeyBindings": [
     {
       "before": ["p"],
       "after": ["p", "g", "v", "y"]
+    },
+    {
+      "before": ["$"],
+      "after": ["g", "_"]
+    },
+    {
+      "before": ["T"],
+      "commands": ["add-arround.insertTemplate"]
     }
   ],
 
