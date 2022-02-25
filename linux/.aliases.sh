@@ -12,6 +12,7 @@ alias t='tree'
 # Git
 alias gcm='git commit -m'
 alias gpl='git pull'
+alias glc='git add .; git commit --amend --no-edit' # add changes to last commit (glc git last commit)
 
 #Vim
 alias vim="nvim"
