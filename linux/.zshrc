@@ -124,7 +124,7 @@ export VISUAL=nvim
 export EDITOR="$VISUAL"
 # vim
 bindkey jj vi-cmd-mode 
-export PATH="$HOME/bin:$PATH"
+export PATH="$HOME/bin:$PATH:/usr/local/go/bin"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_COMMAND='fd --type file --follow --hidden --exclude .git'
 export FZF_CTRL_T_COMMAND='fd --type file --follow --hidden --exclude .git'
@@ -139,5 +139,5 @@ export NVM_DIR="$HOME/.nvm"
 
 
 source ~/.nvm.zsh
-
 source ~/.proot/entryPoint.sh
+source ~/.gvm/scripts/gvm
