@@ -16,3 +16,6 @@ alias glc='git add .; git commit --amend --no-edit' # add changes to last commit
 
 #Vim
 alias vim="nvim"
+
+# Tmux layouts
+alias tvim="tmux source vim-terminal.conf" # vim with two terminals
