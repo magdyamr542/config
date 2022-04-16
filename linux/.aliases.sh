@@ -19,3 +19,12 @@ alias vim="nvim"
 
 # Tmux layouts
 alias tvim="tmux source vim-terminal.conf" # vim with two terminals
+
+
+# Using astah
+alias java8="sdk use java 8.0.322.fx-zulu"
+alias java11="sdk use java 11.0.14.10.1-amzn"
+
+# Using kubernetes
+alias k="kubectl"
+

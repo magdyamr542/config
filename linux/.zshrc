@@ -140,6 +140,11 @@ export NVM_DIR="$HOME/.nvm"
 source ~/.nvm.zsh
 source ~/.proot/entryPoint.sh
 source ~/.gvm/scripts/gvm
+source ~/.kubectl/completion
 
 
 export PATH="$HOME/bin:$PATH:/usr/local/go/bin:$HOME/go/bin"
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
