@@ -17,3 +17,6 @@ alias vim="nvim"
 alias gpl="git pull"
 alias gcm="git commit -m"
 alias glc='git add .; git commit --amend --no-edit' # add changes to last commit (glc git last commit)
+
+# open the repo in the browser 
+alias show-repo='open $(git config --get remote.origin.url  | cut -d ":" -f 2 | xargs -I repo echo  https://github.com/repo | rev | cut -c5- | rev)'
