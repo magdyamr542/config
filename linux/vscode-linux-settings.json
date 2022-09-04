@@ -2,8 +2,9 @@
   "terminal.integrated.fontFamily": "monospace",
   "vim.leader": "<Space>",
   "workbench.editor.enablePreview": false,
+  "debug.allowBreakpointsEverywhere": true,
   "editor.suggestSelection": "first",
-  "terminal.integrated.defaultProfile.osx": "zsh",
+  "terminal.integrated.defaultProfile.osx": "tmux",
   "terminal.integrated.profiles.osx": {
     "bash": {
       "path": "bash",
@@ -27,9 +28,7 @@
       "icon": "terminal-powershell"
     }
   },
-
   "bashIde.explainshellEndpoint": "http://localhost:5000",
-  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
   "vimFindHighlight.charPrimaryColor": "green",
   "vimFindHighlight.charSecondaryColor": "red",
   "vimFindHighlight.charFontWeight": "800",
@@ -37,18 +36,20 @@
   "terminal.integrated.allowChords": false,
   "terminal.integrated.drawBoldTextInBrightColors": false,
   "terminal.integrated.experimentalLinkProvider": false,
-  "python.defaultInterpreterPath": "/usr/bin/python3",
+  "python.defaultInterpreterPath": "/usr/local/bin/python3",
   "terminal.integrated.rendererType": "auto",
+  "jest.autoRun": "off",
   "workbench.iconTheme": "material-icon-theme",
   "typescript.preferences.importModuleSpecifier": "relative",
   "files.exclude": {
     "**/.classpath": true,
     "**/.factorypath": true,
     "**/.project": true,
-    "**/.settings": true
+    "**/.settings": true,
+    "**/*.class": true
   },
   "workbench.colorTheme": "Visual Studio Light",
-  "vim.visualModeKeyBindings": [
+  "vim.visualModeKeyBindingsNonRecursive": [
     {
       "before": ["p"],
       "after": ["p", "g", "v", "y"]
@@ -60,9 +61,12 @@
     {
       "before": ["T"],
       "commands": ["add-arround.insertTemplate"]
+    },
+    {
+      "before": ["<C-d>"],
+      "commands": ["editor.action.addSelectionToNextFindMatch"]
     }
   ],
-
   "vim.insertModeKeyBindings": [
     {
       "before": ["j", "j"],
@@ -70,6 +74,42 @@
     }
   ],
   "vim.normalModeKeyBindings": [
+    {
+      "before": ["m", "t"],
+      "commands": [{ "command": "editor.emmet.action.matchTag" }]
+    },
+    {
+      "before": ["<C-a>"],
+      "after": ["g", "g", "V", "G"]
+    },
+    {
+      "before": ["S"],
+      "after": [":", "s", "/"]
+    },
+    {
+      "before": ["<C-b>", "c"],
+      "commands": ["bookmarks.clearFromAllFiles"]
+    },
+    {
+      "before": ["<C-b>", "n"],
+      "commands": ["bookmarks.jumpToNext"]
+    },
+    {
+      "before": ["<C-b>", "n"],
+      "commands": ["bookmarks.jumpToNext"]
+    },
+    {
+      "before": ["<C-b>", "t"],
+      "commands": ["bookmarks.toggle"]
+    },
+    {
+      "before": ["<C-b>", "m"],
+      "commands": ["bookmarks.toggleLabeled"]
+    },
+    {
+      "before": ["<C-b>", "l"],
+      "commands": ["bookmarks.listFromAllFiles"]
+    },
     {
       "before": ["<C-n>"],
       "commands": [":nohl"]
@@ -81,9 +121,16 @@
     {
       "before": ["Y"],
       "after": ["y", "$"]
+    },
+    {
+      "before": ["$"],
+      "after": ["g", "_"]
+    },
+    {
+      "before": ["T"],
+      "commands": ["add-arround.insertTemplate"]
     }
   ],
-
   "vim.normalModeKeyBindingsNonRecursive": [
     {
       "before": ["<Esc>"],
@@ -105,20 +152,22 @@
     "<D-c>": false,
     "<C-f>": false,
     "<C-w>": false,
-    "<C-d>": false,
     "<C-k>": false,
     "<C-e>": false
   },
-  "editor.codeActionsOnSave": {
-    "source.fixAll": true
-  },
   "explorer.confirmDelete": false,
+  "eslint.validate": ["vue", "html", "javascript", "typescript"],
+  "eslint.nodePath": "/usr/bin/node",
   "editor.lineNumbers": "relative",
+  "editor.bracketPairColorization.enabled": false,
   "[html]": {
-    "editor.defaultFormatter": "vscode.html-language-features"
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[go]": {
+    "editor.defaultFormatter": "golang.go"
   },
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
@@ -175,5 +224,37 @@
     "default": "right",
     "jupyter-notebook": "left"
   },
-  "terminal.integrated.defaultProfile.linux": "zsh"
+  "terminal.integrated.defaultProfile.linux": "zsh",
+  "cSpell.enabled": true,
+  "i18n-ally.displayLanguage": "de",
+  "[cpp]": {
+    "editor.defaultFormatter": "ms-vscode.cpptools"
+  },
+  //   "explorer.experimental.fileNesting.enabled": true,
+  //   "explorer.experimental.fileNesting.expand": true,
+  //   "explorer.experimental.fileNesting.patterns": {
+  //     "*.go": "$(capture).go, $(capture)_test.go"
+  //   }
+  "java.jdt.ls.java.home": "/home/amr/.sdkman/candidates/java/current",
+  "kotlin.java.home": "/home/amr/.sdkman/candidates/java/20.3.3.0-mandrel",
+  "java.project.referencedLibraries": ["/home/amr/.gradle/caches//**//*.jar"],
+  "java.configuration.updateBuildConfiguration": "automatic",
+  "[java]": {
+    "editor.defaultFormatter": "redhat.java"
+  },
+  "java.import.gradle.home": "/home/amr/.gradle/",
+  "redhat.telemetry.enabled": false,
+  "cSpell.enableFiletypes": ["kotlin"],
+  "npm.keybindingsChangedWarningShown": true,
+  "cSpell.userWords": ["Knockable"],
+  "java.configuration.runtimes": [
+    {
+      "name": "JavaSE-18",
+      "path": "/home/amr/.sdkman/candidates/java/18.0.2-zulu",
+      "default": true
+    }
+  ],
+  "sync.removeExtensions": false,
+  "sync.autoDownload": true,
+  "sync.gist": "f4b3be5de4e5802748aee2ae6cba2b6f"
 }
