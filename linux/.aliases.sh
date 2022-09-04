@@ -28,3 +28,6 @@ alias java11="sdk use java 11.0.14.10.1-amzn"
 # Using kubernetes
 alias k="kubectl"
 
+
+# new docker compose
+alias docker-compose="docker compose"

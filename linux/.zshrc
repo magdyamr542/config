@@ -143,8 +143,11 @@ source ~/.gvm/scripts/gvm
 source ~/.kubectl/completion
 
 
-export PATH="$HOME/bin:$PATH:/usr/local/go/bin:$HOME/go/bin"
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$HOME/bin:$PATH:/usr/local/go/bin:$HOME/go/bin:$PYENV_ROOT/bin"
+eval "$(pyenv virtualenv-init -)"
