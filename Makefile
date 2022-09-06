@@ -66,6 +66,8 @@ nvim:
 	nvim --headless +PlugInstall +qall
 
 
+node-version-manager:
+	curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
 
 
 .PHONY: nvim zsh install install-packages link all
