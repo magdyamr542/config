@@ -92,14 +92,16 @@ fzf:
 	git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 	~/.fzf/install
 
+sdk-man:
+	 curl -s "https://get.sdkman.io" | bash
+	 source "$(HOME)/.sdkman/bin/sdkman-init.sh"
+
 manual-install:
 	@echo "Don't forget to manually install these"
 	@echo "Project root -> https://github.com/magdyamr542/project-root"
 	@echo "Docker -> https://github.com/docker/docker-install"
+	@echo "Java after installing sdkman"
 
-sdk-man:
-	 curl -s "https://get.sdkman.io" | bash
-	 source "$(HOME)/.sdkman/bin/sdkman-init.sh"
 
 	
 .PHONY: nvim zsh install install-packages link all autojump
