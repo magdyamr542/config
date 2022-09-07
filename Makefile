@@ -13,14 +13,11 @@ link:
 	ln -f -s ${PWD}/linux/.zshrc $(HOMEDIR)/.zshrc
 	ln -f -s ${PWD}/linux/.aliases.sh $(HOMEDIR)/.aliases.sh
 
-
 install: install-packages
-
 
 init-bin:
 	mkdir -p $(HOMEDIR)/bin
 	export PATH=$(PATH_VAR):$(HOMEDIR)/bin
-
 
 install-packages:
 ifeq ($(UNAME),Darwin)
@@ -34,7 +31,8 @@ ifeq ($(UNAME),Darwin)
 		wget \
 		coreutils \
 		powerline \
-		neovim
+		neovim \
+		httpie 
 else
 	@echo "Linux detected. Assuming there's an apt binary."	
 	sudo apt install -y \
@@ -44,7 +42,13 @@ else
 		curl \
 		tree \
 		powerline \
-		neovim
+		neovim \
+	  mercurial \
+		binutils \
+		bison \
+		gcc  \
+		build-essential \
+		httpie
 	
 endif
 
@@ -65,7 +69,6 @@ nvim:
 	mv ./nvim.appimage  $(HOMEDIR)/bin/nvim
 	nvim --headless +PlugInstall +qall
 
-
 node-version-manager:
 	curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
 
@@ -76,9 +79,16 @@ autojump:
 pyenv:
 	curl https://pyenv.run | bash
 
+golang:
+	bash < <(curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer)
+	source ~/.gvm/scripts/gvm
+	gvm install go1.19.1
+
 setup-tmux:
 	@echo Add the command gnome-terminal -e 'tmux new' as a keyboard shortcut
+
+manual-install:
+	@echo "Don't forget to manually install these"
+	@echo "Project root -> https://github.com/magdyamr542/project-root"
 	
-
 .PHONY: nvim zsh install install-packages link all autojump
-
