@@ -72,6 +72,9 @@ node-version-manager:
 autojump:
 	git clone git@github.com:wting/autojump.git
 	cd autojump && ./install.py && cd .. && rm -rf autojump
+
+pyenv:
+	curl https://pyenv.run | bash
 	
 
 .PHONY: nvim zsh install install-packages link all autojump
