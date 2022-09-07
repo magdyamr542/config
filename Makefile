@@ -90,5 +90,6 @@ setup-tmux:
 manual-install:
 	@echo "Don't forget to manually install these"
 	@echo "Project root -> https://github.com/magdyamr542/project-root"
+	@echo "Docker -> https://github.com/docker/docker-install"
 	
 .PHONY: nvim zsh install install-packages link all autojump
