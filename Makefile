@@ -75,6 +75,9 @@ autojump:
 
 pyenv:
 	curl https://pyenv.run | bash
+
+setup-tmux:
+	@echo Add the command gnome-terminal -e 'tmux new' as a keyboard shortcut
 	
 
 .PHONY: nvim zsh install install-packages link all autojump
