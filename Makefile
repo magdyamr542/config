@@ -87,6 +87,10 @@ golang:
 setup-tmux:
 	@echo Add the command gnome-terminal -e 'tmux new' as a keyboard shortcut
 
+fzf:
+	git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+	~/.fzf/install
+
 manual-install:
 	@echo "Don't forget to manually install these"
 	@echo "Project root -> https://github.com/magdyamr542/project-root"
