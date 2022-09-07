@@ -96,5 +96,10 @@ manual-install:
 	@echo "Don't forget to manually install these"
 	@echo "Project root -> https://github.com/magdyamr542/project-root"
 	@echo "Docker -> https://github.com/docker/docker-install"
+
+sdk-man:
+	 curl -s "https://get.sdkman.io" | bash
+	 source "$(HOME)/.sdkman/bin/sdkman-init.sh"
+
 	
 .PHONY: nvim zsh install install-packages link all autojump
