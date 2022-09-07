@@ -70,12 +70,9 @@ node-version-manager:
 	curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
 
 autojump:
-	git clone git://github.com/wting/autojump.git
-	cd autojump
-	./install.py or ./uninstall.py
-	cd ..
-	rm -rf autojump
+	git clone git@github.com:wting/autojump.git
+	cd autojump && ./install.py && cd .. && rm -rf autojump
+	
 
-
-.PHONY: nvim zsh install install-packages link all
+.PHONY: nvim zsh install install-packages link all autojump
 
