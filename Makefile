@@ -96,11 +96,17 @@ sdk-man:
 	 curl -s "https://get.sdkman.io" | bash
 	 source "$(HOME)/.sdkman/bin/sdkman-init.sh"
 
+chrome:
+	 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+	 sudo apt install ./google-chrome-stable_current_amd64.deb
+	 rm ./google-chrome-stable_current_amd64.deb
+
 manual-install:
 	@echo "Don't forget to manually install these"
 	@echo "Project root -> https://github.com/magdyamr542/project-root"
 	@echo "Docker -> https://github.com/docker/docker-install"
 	@echo "Java after installing sdkman"
+	@echo "Sync vscode settings"
 
 
 	
