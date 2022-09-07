@@ -69,8 +69,9 @@ nvim:
 	mv ./nvim.appimage  $(HOMEDIR)/bin/nvim
 	nvim --headless +PlugInstall +qall
 
-node-version-manager:
+nodejs:
 	curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+	nvm install --lts
 
 autojump:
 	git clone git@github.com:wting/autojump.git
