@@ -13,14 +13,11 @@ link:
 	ln -f -s ${PWD}/linux/.zshrc $(HOMEDIR)/.zshrc
 	ln -f -s ${PWD}/linux/.aliases.sh $(HOMEDIR)/.aliases.sh
 
-
 install: install-packages
-
 
 init-bin:
 	mkdir -p $(HOMEDIR)/bin
 	export PATH=$(PATH_VAR):$(HOMEDIR)/bin
-
 
 install-packages:
 ifeq ($(UNAME),Darwin)
@@ -34,7 +31,8 @@ ifeq ($(UNAME),Darwin)
 		wget \
 		coreutils \
 		powerline \
-		neovim
+		neovim \
+		httpie 
 else
 	@echo "Linux detected. Assuming there's an apt binary."	
 	sudo apt install -y \
@@ -44,7 +42,17 @@ else
 		curl \
 		tree \
 		powerline \
-		neovim
+		neovim \
+	  mercurial \
+		binutils \
+		bison \
+		gcc  \
+		build-essential \
+		httpie \
+		software-properties-common \
+		apt-transport-https
+
+ 
 	
 endif
 
@@ -65,21 +73,58 @@ nvim:
 	mv ./nvim.appimage  $(HOMEDIR)/bin/nvim
 	nvim --headless +PlugInstall +qall
 
-
-node-version-manager:
+nodejs:
 	curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+	nvm install --lts
 
 autojump:
-	git clone git://github.com/wting/autojump.git
-	cd autojump
-	./install.py or ./uninstall.py
-	cd ..
-	rm -rf autojump
+	git clone git@github.com:wting/autojump.git
+	cd autojump && ./install.py && cd .. && rm -rf autojump
+
+pyenv:
+	curl https://pyenv.run | bash
+
+golang:
+	bash < <(curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer)
+	source ~/.gvm/scripts/gvm
+	gvm install go1.19.1
+
+setup-tmux:
+	@echo Add the command gnome-terminal -e 'tmux new' as a keyboard shortcut
+
+fzf:
+	git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+	~/.fzf/install
+
+sdk-man:
+	 curl -s "https://get.sdkman.io" | bash
+	 source "$(HOME)/.sdkman/bin/sdkman-init.sh"
+
+chrome:
+	 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+	 sudo apt install ./google-chrome-stable_current_amd64.deb
+	 rm ./google-chrome-stable_current_amd64.deb
+
+manual-install:
+	@echo "Don't forget to manually install these"
+	@echo "Project root -> https://github.com/magdyamr542/project-root"
+	@echo "Docker -> https://github.com/docker/docker-install"
+	@echo "Java after installing sdkman"
+	@echo "Sync vscode settings"
+
+vscode:
+	 wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
+	 sudo install -o root -g root -m 644 packages.microsoft.gpg /etc/apt/trusted.gpg.d/
+	 sudo sh -c 'echo "deb [arch=amd64 signed-by=/etc/apt/trusted.gpg.d/packages.microsoft.gpg] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
+	 sudo apt update
+	 sudo apt install code
+	 rm packages.microsoft.gpg
 
 backup-installed-commands:
 	dpkg --clear-selections
 	sudo apt install < ./linux/installed-commands
 
 
-.PHONY: nvim zsh install install-packages link all
 
+	
+.PHONY: nvim zsh install install-packages link all autojump
