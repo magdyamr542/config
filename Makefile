@@ -76,6 +76,10 @@ autojump:
 	cd ..
 	rm -rf autojump
 
+backup-installed-commands:
+	dpkg --clear-selections
+	sudo apt install < ./linux/installed-commands
+
 
 .PHONY: nvim zsh install install-packages link all
 
