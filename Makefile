@@ -51,6 +51,7 @@ else
 		httpie \
 		software-properties-common \
 		fd-find \
+		lua5.3 \
 		apt-transport-https
 
  
