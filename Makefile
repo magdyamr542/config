@@ -52,6 +52,7 @@ else
 		software-properties-common \
 		fd-find \
 		lua5.3 \
+		ripgrep \
 		apt-transport-https
 
  
