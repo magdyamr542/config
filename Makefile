@@ -133,7 +133,8 @@ aws-cli:
 	./aws/install -i /usr/local/aws-cli -b /usr/local/bin
 	sudo rm -rf aws awscliv2.zip
 
-
+ngrok:
+	curl -s https://ngrok-agent.s3.amazonaws.com/ngrok.asc | sudo tee /etc/apt/trusted.gpg.d/ngrok.asc >/dev/null && echo "deb https://ngrok-agent.s3.amazonaws.com buster main" | sudo tee /etc/apt/sources.list.d/ngrok.list && sudo apt update && sudo apt install ngrok
 
 
 	
