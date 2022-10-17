@@ -69,7 +69,7 @@ nvim:
 	echo "setting up neovim repo from https://github.com/magdyamr542/nvim"
 	mkdir -p $(HOMEDIR)/.config/
 	git clone https://github.com/magdyamr542/nvim $(HOMEDIR)/.config/nvim
-	curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
+	curl -LO https://github.com/neovim/neovim/releases/download/v0.7.0/nvim.appimage
 	chmod u+x nvim.appimage
 	mv ./nvim.appimage  $(HOMEDIR)/bin/nvim
 	nvim --headless +PlugInstall +qall
