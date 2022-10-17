@@ -50,6 +50,7 @@ else
 		build-essential \
 		httpie \
 		software-properties-common \
+		fd-find \
 		apt-transport-https
 
  
@@ -123,6 +124,7 @@ vscode:
 backup-installed-commands:
 	dpkg --clear-selections
 	sudo apt install < ./linux/installed-commands
+
 
 
 
