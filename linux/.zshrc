@@ -137,10 +137,8 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 
-source ~/.nvm.zsh
 source ~/.proot/entryPoint.sh
 source ~/.gvm/scripts/gvm
-source ~/.kubectl/completion
 
 
 
