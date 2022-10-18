@@ -25,7 +25,6 @@ ifeq ($(UNAME),Darwin)
 	brew install \
 		vim \
 		git \
-		tmux \
 		zsh \
 		curl \
 		wget \
@@ -37,7 +36,6 @@ else
 	@echo "Linux detected. Assuming there's an apt binary."	
 	sudo apt install -y \
 		git \
-		tmux \
 		zsh \
 		curl \
 		tree \
@@ -95,6 +93,9 @@ golang:
 
 setup-tmux:
 	@echo Add the command gnome-terminal -e 'tmux new' as a keyboard shortcut
+	
+install-tmux:
+	./tmux/install.sh
 
 fzf:
 	git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
