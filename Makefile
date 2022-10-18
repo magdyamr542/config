@@ -145,6 +145,11 @@ aws-cli:
 ngrok:
 	curl -s https://ngrok-agent.s3.amazonaws.com/ngrok.asc | sudo tee /etc/apt/trusted.gpg.d/ngrok.asc >/dev/null && echo "deb https://ngrok-agent.s3.amazonaws.com buster main" | sudo tee /etc/apt/sources.list.d/ngrok.list && sudo apt update && sudo apt install ngrok
 
+ansible:
+	sudo apt-add-repository ppa:ansible/ansible
+	sudo apt update
+	sudo apt install -y ansible
+
 
 	
 .PHONY: nvim zsh install install-packages link all autojump
