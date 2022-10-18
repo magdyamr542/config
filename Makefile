@@ -52,6 +52,7 @@ else
 		lua5.3 \
 		ripgrep \
 		inxi \
+		net-tools \
 		apt-transport-https
 
  
