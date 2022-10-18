@@ -97,6 +97,12 @@ setup-tmux:
 	
 install-tmux:
 	./tmux/install.sh
+	$(MAKE) install-tmux-plugin-manager
+
+install-tmux-plugin-manager:
+	git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+	tmux source ~/.tmux.conf
+	@echo "Use <ctrl-b>I to install the tmux plugins"
 
 fzf:
 	git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
@@ -142,3 +148,4 @@ ngrok:
 
 	
 .PHONY: nvim zsh install install-packages link all autojump
+
