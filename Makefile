@@ -53,6 +53,7 @@ else
 		fd-find \
 		lua5.3 \
 		ripgrep \
+		inxi \
 		apt-transport-https
 
  
