@@ -11,6 +11,7 @@ link:
 	echo "creating symlinks for [.tmux.conf, .zshrc, .aliases.sh]"
 	ln -f -s ${PWD}/tmux/.tmux.conf $(HOMEDIR)/.tmux.conf
 	ln -f -s ${PWD}/linux/.zshrc $(HOMEDIR)/.zshrc
+	ln -f -s ${PWD}/linux/.p10k.zsh $(HOMEDIR)/.p10k.zsh
 	ln -f -s ${PWD}/linux/.aliases.sh $(HOMEDIR)/.aliases.sh
 
 install: install-packages
