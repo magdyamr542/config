@@ -13,6 +13,8 @@ link:
 	ln -f -s ${PWD}/linux/.zshrc $(HOMEDIR)/.zshrc
 	ln -f -s ${PWD}/linux/.p10k.zsh $(HOMEDIR)/.p10k.zsh
 	ln -f -s ${PWD}/linux/.aliases.sh $(HOMEDIR)/.aliases.sh
+	mkdir $(HOMEDIR)/bin
+	ln -f -s ${PWD}/scripts/touchr $(HOMEDIR)/bin/touchr
 
 install: install-packages
 
