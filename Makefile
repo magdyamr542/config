@@ -56,6 +56,7 @@ else
 		ripgrep \
 		inxi \
 		net-tools \
+		jq \
 		apt-transport-https
 
  
