@@ -57,6 +57,7 @@ else
 		inxi \
 		net-tools \
 		jq \
+		bat \
 		apt-transport-https
 
  
