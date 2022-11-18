@@ -58,6 +58,7 @@ else
 		net-tools \
 		jq \
 		bat \
+		imagemagick \
 		apt-transport-https
 
  
