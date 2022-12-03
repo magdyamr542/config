@@ -156,6 +156,9 @@ ansible:
 	sudo apt update
 	sudo apt install -y ansible
 
+virtualbox:
+	sudo apt-get install virtualbox
+
 
 	
 .PHONY: nvim zsh install install-packages link all autojump
