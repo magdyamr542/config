@@ -84,6 +84,7 @@ plugins=(
   autojump
   colored-man-pages
   history-substring-search
+  fd
 )
 source $ZSH/oh-my-zsh.sh
 ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
@@ -149,3 +150,14 @@ export SDKMAN_DIR="$HOME/.sdkman"
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$HOME/bin:$PATH:/usr/local/go/bin:$HOME/go/bin:$PYENV_ROOT/bin"
 eval "$(pyenv virtualenv-init -)"
+
+# >>>> Vagrant command completion (start)
+fpath=(/opt/vagrant/embedded/gems/2.3.3/gems/vagrant-2.3.3/contrib/zsh $fpath)
+compinit
+# <<<<  Vagrant command completion (end)
+
+# kubectl auto completion
+[[ -s "$HOME/.kubectl-auto-complete.zsh" ]] && source "$HOME/.kubectl-auto-complete.zsh"
+
+# helm auto completion
+[[ -s "$HOME/.helm-auto-complete.zsh" ]] && source "$HOME/.helm-auto-complete.zsh"
