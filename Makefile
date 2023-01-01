@@ -159,6 +159,9 @@ ansible:
 virtualbox:
 	sudo apt-get install virtualbox
 
+screen-recorder:
+	sudo add-apt-repository ppa:atareao/atareao
+	sudo apt install screenkeyfk
 
 	
 .PHONY: nvim zsh install install-packages link all autojump
