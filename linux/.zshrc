@@ -145,10 +145,6 @@ export NVM_DIR="$HOME/.nvm"
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$HOME/bin:$PATH:/usr/local/go/bin:$HOME/go/bin:$PYENV_ROOT/bin"
-eval "$(pyenv virtualenv-init -)"
-
 # >>>> Vagrant command completion (start)
 fpath=(/opt/vagrant/embedded/gems/2.3.3/gems/vagrant-2.3.3/contrib/zsh $fpath)
 compinit

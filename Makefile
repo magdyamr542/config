@@ -126,10 +126,12 @@ golang:
 	source ~/.gvm/scripts/gvm
 	gvm install go1.19.1
 
+# tmux stuff
 setup-tmux:
 	@echo Add the command gnome-terminal -e 'tmux new' as a keyboard shortcut
 	
 install-tmux:
+	@echo "installing tmux"
 	./tmux/install.sh
 	$(MAKE) install-tmux-plugin-manager
 
@@ -137,6 +139,7 @@ install-tmux-plugin-manager:
 	git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 	tmux source ~/.tmux.conf
 	@echo "Use <ctrl-b>I to install the tmux plugins"
+# end tmux stuff
 
 fzf:
 	git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
