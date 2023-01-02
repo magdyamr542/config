@@ -28,7 +28,6 @@ ifeq ($(UNAME),Darwin)
 	brew install \
 		vim \
 		git \
-		zsh \
 		curl \
 		wget \
 		coreutils \
@@ -39,7 +38,6 @@ else
 	@echo "Linux detected. Assuming there's an apt binary."	
 	sudo apt install -y \
 		git \
-		zsh \
 		curl \
 		tree \
 		powerline \
@@ -67,10 +65,7 @@ endif
 
 zsh:
 	echo "installing oh-my-zsh"
-	curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -o install-oh-my-zsh.sh;
-	curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh -o install-oh-my-zsh.sh;
-	sh install-oh-my-zsh.sh
-	rm install-oh-my-zsh.sh
+	sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 	chsh -s /usr/bin/zsh
 
 nvim:
