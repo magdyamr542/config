@@ -5,8 +5,6 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -155,3 +153,6 @@ compinit
 
 # helm auto completion
 [[ -s "$HOME/.helm-auto-complete.zsh" ]] && source "$HOME/.helm-auto-complete.zsh"
+
+# source my custom bin
+export PATH=$HOME/bin:$PATH
