@@ -8,10 +8,8 @@ UNAME := $(shell uname)
 all: install
 
 link:
-	echo "creating symlinks for [.tmux.conf, .zshrc, .aliases.sh]"
+	@echo "creating symlinks for [.tmux.conf, .zshrc, .aliases.sh]"
 	ln -f -s ${PWD}/tmux/.tmux.conf $(HOMEDIR)/.tmux.conf
-	ln -f -s ${PWD}/linux/.zshrc $(HOMEDIR)/.zshrc
-	ln -f -s ${PWD}/linux/.p10k.zsh $(HOMEDIR)/.p10k.zsh
 	ln -f -s ${PWD}/linux/.aliases.sh $(HOMEDIR)/.aliases.sh
 	mkdir $(HOMEDIR)/bin
 	ln -f -s ${PWD}/scripts/touchr $(HOMEDIR)/bin/touchr
@@ -36,13 +34,14 @@ ifeq ($(UNAME),Darwin)
 		httpie 
 else
 	@echo "Linux detected. Assuming there's an apt binary."	
+	sudo apt-get update -y
 	sudo apt install -y \
 		git \
 		curl \
 		tree \
 		powerline \
 		neovim \
-	  mercurial \
+      mercurial \
 		binutils \
 		bison \
 		gcc  \
@@ -51,7 +50,6 @@ else
 		software-properties-common \
 		fd-find \
 		lua5.3 \
-		ripgrep \
 		inxi \
 		net-tools \
 		jq \
@@ -63,10 +61,45 @@ else
 	
 endif
 
+# zsh stuff
 zsh:
-	echo "installing oh-my-zsh"
-	sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+	@echo "creating symlink to .zshrc"
+	ln -f -s ${PWD}/linux/.zshrc $(HOMEDIR)/.zshrc
+	@echo "installing zsh"
+	sudo apt-get install -y zsh
+
+oh-my-zsh:
+	@echo "installing oh-my-zsh"
+	wget -O install.sh https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
+	sh install.sh
+	@echo "rm installed script"
+	rm install.sh
+	@echo "rm .zshrc.pre-oh-my-zsh created by oh-my-zsh"
+	rm $(HOMEDIR)/.zshrc.pre-oh-my-zsh
+	@echo "creating links again"
+	ln -f -s ${PWD}/linux/.zshrc $(HOMEDIR)/.zshrc
+	@echo "creating powerlevel10k"
+	ln -f -s ${PWD}/linux/.zshrc $(HOMEDIR)/.zshrc
+	@echo "starting zsh"
 	chsh -s /usr/bin/zsh
+
+
+oh-my-zsh-plugins:
+	git clone https://github.com/zsh-users/zsh-autosuggestions $(HOMEDIR)/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+	git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $(HOMEDIR)/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+
+
+powerlevel10k:
+	@echo "creating symlink to .p10k.zsh"
+	ln -f -s ${PWD}/linux/.p10k.zsh $(HOMEDIR)/.p10k.zsh
+	@echo "installing powerlevel10k"
+	git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $(HOMEDIR)/.oh-my-zsh/custom/themes/powerlevel10k
+	@echo "resource ~/.zshrc in order for the changes to take effect"
+
+zsh-final:
+	ln -f -s ${PWD}/linux/.zshrc $(HOMEDIR)/.zshrc
+
+# end zsh stuff
 
 nvim:
 	echo "setting up neovim repo from https://github.com/magdyamr542/nvim"
@@ -158,6 +191,6 @@ screen-recorder:
 	sudo add-apt-repository ppa:atareao/atareao
 	sudo apt install screenkeyfk
 
-	
+
 .PHONY: nvim zsh install install-packages link all autojump
 

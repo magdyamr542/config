@@ -9,7 +9,7 @@ fi
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/amr/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -125,12 +125,8 @@ export VISUAL=nvim
 export EDITOR="$VISUAL"
 # vim
 bindkey jj vi-cmd-mode 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_COMMAND='fd --type file --follow --hidden --exclude .git'
 export FZF_CTRL_T_COMMAND='fd --type file --follow --hidden --exclude .git'
-
-[ -f ~/.aliases.sh ] && source ~/.aliases.sh
-[ -f ~/.funcs.sh ] && source ~/.funcs.sh
 
 
 export NVM_DIR="$HOME/.nvm"
@@ -138,9 +134,11 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 
-source ~/.proot/entryPoint.sh
-source ~/.gvm/scripts/gvm
-
+[ -f "$HOME/.proot/entryPoint.sh" ] && source "$HOME/.proot/entryPoint.sh" 
+[ -f "$HOME/.aliases.sh" ] && source "$HOME/.aliases.sh" 
+[ -f "$HOME/.funcs.sh" ] && source "$HOME/.funcs.sh" 
+[ -f "$HOME/.fzf.zsh" ] && source "$HOME/.fzf.zsh" 
+[ -f "$HOME/.gvm/scripts/gvm" ] && source "$HOME/.gvm/scripts/gvm" 
 
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
