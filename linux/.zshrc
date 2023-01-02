@@ -125,8 +125,15 @@ export VISUAL=nvim
 export EDITOR="$VISUAL"
 # vim
 bindkey jj vi-cmd-mode 
+
+# fzf commands
 export FZF_DEFAULT_COMMAND='fd --type file --follow --hidden --exclude .git'
 export FZF_CTRL_T_COMMAND='fd --type file --follow --hidden --exclude .git'
+# fall back to find
+if ! type "fd" > /dev/null; then
+  export FZF_DEFAULT_COMMAND='find . -type f'
+  export FZF_CTRL_T_COMMAND='find . -type f'
+fi
 
 
 export NVM_DIR="$HOME/.nvm"
