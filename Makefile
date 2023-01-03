@@ -124,7 +124,13 @@ pyenv:
 golang:
 	bash < <(curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer)
 	source ~/.gvm/scripts/gvm
-	gvm install go1.19.1
+	# install go1.4 that uses a c compiler to be able to install go versions that use a go compiler
+	gvm install go1.4 -B
+	gvm use go1.4
+	export GOROOT_BOOTSTRAP=$GOROOT
+	gvm install go1.19
+	gvm use go1.19
+	ln -s $(HOMEDIR)/.gvm/gos/go1.19/ ~/go
 
 # tmux stuff
 setup-tmux:

@@ -163,3 +163,6 @@ compinit
 
 # source my custom bin
 export PATH=$HOME/bin:$PATH
+
+# source go bin
+export PATH=$PATH:$HOME/go/bin
