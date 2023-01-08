@@ -111,6 +111,7 @@ zsh-final:
 nvim:
 	echo "setting up neovim repo from https://github.com/magdyamr542/nvim"
 	mkdir -p $(HOMEDIR)/.config/
+	mkdir -p $(HOMEDIR)/bin
 	git clone https://github.com/magdyamr542/nvim $(HOMEDIR)/.config/nvim
 	curl -LO https://github.com/neovim/neovim/releases/download/v0.7.0/nvim.appimage
 	chmod u+x nvim.appimage
