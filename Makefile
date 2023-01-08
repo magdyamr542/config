@@ -109,14 +109,16 @@ zsh-final:
 # end zsh stuff
 
 nvim:
-	echo "setting up neovim repo from https://github.com/magdyamr542/nvim"
+	@echo "setting up neovim repo from https://github.com/magdyamr542/nvim"
 	mkdir -p $(HOMEDIR)/.config/
 	mkdir -p $(HOMEDIR)/bin
 	git clone https://github.com/magdyamr542/nvim $(HOMEDIR)/.config/nvim
 	curl -LO https://github.com/neovim/neovim/releases/download/v0.7.0/nvim.appimage
 	chmod u+x nvim.appimage
 	mv ./nvim.appimage  $(HOMEDIR)/bin/nvim
+	@echo "installing neovim plugins"
 	nvim --headless +PlugInstall +qall
+	@echo "installed neovim. make sure to have your $(HOMEDIR)/bin directory in your PATH"
 
 nodejs:
 	curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
