@@ -1,7 +1,7 @@
 SHELL=/bin/bash
 HOMEDIR=${HOME}
 PATH_VAR=${PATH}
-USER=${USER}
+CURRENT_USER=${USER}
 THINGS_TO_LINK=.zshrc .tmux.conf 
 
 UNAME := $(shell uname)
@@ -217,7 +217,7 @@ docker:
 	@echo "Installed docker"
 	@echo "Granting permissions by creating a docker group that have sudo rights"
 	sudo groupadd docker
-	sudo usermod -aG docker $(USER)
+	sudo usermod -aG docker $(CURRENT_USER)
 	newgrp docker
 
 
