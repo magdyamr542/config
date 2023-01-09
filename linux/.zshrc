@@ -34,6 +34,9 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Uncomment the following line to automatically update without prompting.
 # DISABLE_UPDATE_PROMPT="true"
 
+# prevents ZSH from adding a % sign to the end of lines. https://unix.stackexchange.com/questions/167582/why-zsh-ends-a-line-with-a-highlighted-percent-symbol
+PROMPT_EOL_MARK=''
+
 # Uncomment the following line to change how often to auto-update (in days).
  export UPDATE_ZSH_DAYS=13
 
