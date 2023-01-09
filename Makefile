@@ -210,12 +210,21 @@ screen-recorder:
 	sudo apt install screenkeyfk
 
 docker:
-	@echo "Installing docker"
-	curl -fsSL https://get.docker.com -o get-docker.sh
-	sh get-docker.sh
-	rm get-docker.sh
-	@echo "Installed docker"
+        @echo "Cleanup"
+        $(MAKE) remove-docker
+        @echo "Installing docker"
+        curl -fsSL https://get.docker.com -o get-docker.sh
+        sh get-docker.sh
+        rm get-docker.sh
+        @echo "Installed docker"
 
+docker-remove:
+        apt-get remove docker-ce docker-ce-cli
+        dpkg -P docker-ce
+        apt-get install -f
+        apt autoremove --purge
+        apt-get install --fix-broken -y
+        @echo "Removed docker"
+        @echo "Make sure to remove any groups that were created when installing"
 
 .PHONY: nvim zsh install install-packages link all autojump
-
