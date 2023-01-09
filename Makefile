@@ -173,8 +173,6 @@ chrome:
 manual-install:
 	@echo "Don't forget to manually install these"
 	@echo "Project root -> https://github.com/magdyamr542/project-root"
-	@echo "Docker -> https://github.com/docker/docker-install"
-	@echo "Java after installing sdkman"
 	@echo "Sync vscode settings"
 
 vscode:
@@ -209,6 +207,14 @@ virtualbox:
 screen-recorder:
 	sudo add-apt-repository ppa:atareao/atareao
 	sudo apt install screenkeyfk
+
+docker:
+	@echo "Installing docker"
+	curl -fsSL https://get.docker.com -o get-docker.sh
+	sh get-docker.sh
+	rm get-docker.sh
+	@echo "Installed docker"
+
 
 
 .PHONY: nvim zsh install install-packages link all autojump
