@@ -215,10 +215,6 @@ docker:
 	sh get-docker.sh
 	rm get-docker.sh
 	@echo "Installed docker"
-	@echo "Granting permissions by creating a docker group that have sudo rights"
-	sudo groupadd docker
-	sudo usermod -aG docker $(CURRENT_USER)
-	newgrp docker
 
 
 .PHONY: nvim zsh install install-packages link all autojump
