@@ -1,6 +1,7 @@
 SHELL=/bin/bash
 HOMEDIR=${HOME}
 PATH_VAR=${PATH}
+USER=${USER}
 THINGS_TO_LINK=.zshrc .tmux.conf 
 
 UNAME := $(shell uname)
@@ -214,7 +215,10 @@ docker:
 	sh get-docker.sh
 	rm get-docker.sh
 	@echo "Installed docker"
-
+	@echo "Granting permissions by creating a docker group that have sudo rights"
+	sudo groupadd docker
+	sudo usermod -aG docker $(USER)
+	newgrp docker
 
 
 .PHONY: nvim zsh install install-packages link all autojump
