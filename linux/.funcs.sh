@@ -1,20 +1,7 @@
-
-
-# adding a file with a pattern istead of writing the full path
-gad () {
-  git add "*$1*"
-}
-
-gbname () {
-  git branch  | grep "$1"
-}
-
-
 # check if command exists
 doesCommandExist () {
   return $(command -v $1 &> /dev/null)
 }
-
 
 # easy cp of file
 cpfile () {
@@ -28,7 +15,8 @@ cpfile () {
 
 }
 
-# history grep faster
-hgrep () {
-  history | grep $1
-}
+# capture the output of a command to the clipboard
+cap () { 
+  tee /tmp/capture.out;
+  cat /tmp/capture.out | xsel -ib 
+} 

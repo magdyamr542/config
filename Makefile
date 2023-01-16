@@ -9,9 +9,10 @@ UNAME := $(shell uname)
 all: install
 
 link:
-	@echo "creating symlinks for [.tmux.conf, .zshrc, .aliases.sh]"
+	@echo "creating symlinks for [.tmux.conf, .zshrc, .aliases.sh , .funcs.sh]"
 	ln -f -s ${PWD}/tmux/.tmux.conf $(HOMEDIR)/.tmux.conf
 	ln -f -s ${PWD}/linux/.aliases.sh $(HOMEDIR)/.aliases.sh
+	ln -f -s ${PWD}/linux/.funcs.sh $(HOMEDIR)/.funcs.sh
 	mkdir -p $(HOMEDIR)/bin
 	ln -f -s ${PWD}/scripts/touchr $(HOMEDIR)/bin/touchr
 
