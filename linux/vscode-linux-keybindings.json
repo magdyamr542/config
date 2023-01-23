@@ -154,5 +154,9 @@
     "key": "ctrl+shift+e",
     "command": "workbench.action.explorer",
     "when": "viewContainer.workbench.view.explorer.disabled"
+  },
+  {
+    "key": "ctrl+k ctrl+w",
+    "command": "workbench.action.closeOtherEditors"
   }
 ]
