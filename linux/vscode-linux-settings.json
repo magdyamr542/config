@@ -1,23 +1,32 @@
 {
   "terminal.integrated.fontFamily": "monospace",
   "vim.leader": "<Space>",
+  "editor.rulers": [
+    120
+  ],
   "workbench.editor.enablePreview": false,
   "debug.allowBreakpointsEverywhere": true,
   "editor.suggestSelection": "first",
-  "terminal.integrated.defaultProfile.osx": "tmux",
+  "terminal.integrated.defaultProfile.osx": "zsh",
   "terminal.integrated.profiles.osx": {
     "bash": {
       "path": "bash",
-      "args": ["-l"],
+      "args": [
+        "-l"
+      ],
       "icon": "terminal-bash"
     },
     "zsh": {
       "path": "zsh",
-      "args": ["-l"]
+      "args": [
+        "-l"
+      ]
     },
     "fish": {
       "path": "fish",
-      "args": ["-l"]
+      "args": [
+        "-l"
+      ]
     },
     "tmux": {
       "path": "tmux",
@@ -35,9 +44,7 @@
   "python.formatting.blackPath": "black",
   "terminal.integrated.allowChords": false,
   "terminal.integrated.drawBoldTextInBrightColors": false,
-  "terminal.integrated.experimentalLinkProvider": false,
   "python.defaultInterpreterPath": "/usr/local/bin/python3",
-  "terminal.integrated.rendererType": "auto",
   "jest.autoRun": "off",
   "workbench.iconTheme": "material-icon-theme",
   "typescript.preferences.importModuleSpecifier": "relative",
@@ -48,93 +55,226 @@
     "**/.settings": true,
     "**/*.class": true
   },
-  "workbench.colorTheme": "Visual Studio Light",
   "vim.visualModeKeyBindingsNonRecursive": [
     {
-      "before": ["p"],
-      "after": ["p", "g", "v", "y"]
+      "before": [
+        "p"
+      ],
+      "after": [
+        "p",
+        "g",
+        "v",
+        "y"
+      ]
     },
     {
-      "before": ["$"],
-      "after": ["g", "_"]
+      "before": [
+        "$"
+      ],
+      "after": [
+        "g",
+        "_"
+      ]
     },
     {
-      "before": ["T"],
-      "commands": ["add-arround.insertTemplate"]
+      "before": [
+        "T"
+      ],
+      "commands": [
+        "add-arround.insertTemplate"
+      ]
     },
     {
-      "before": ["<C-d>"],
-      "commands": ["editor.action.addSelectionToNextFindMatch"]
+      "before": [
+        "<C-d>"
+      ],
+      "commands": [
+        "editor.action.addSelectionToNextFindMatch"
+      ]
     }
   ],
   "vim.insertModeKeyBindings": [
     {
-      "before": ["j", "j"],
-      "after": ["<Esc>"]
+      "before": [
+        "j",
+        "j"
+      ],
+      "after": [
+        "<Esc>"
+      ]
     }
   ],
   "vim.normalModeKeyBindings": [
     {
-      "before": ["m", "t"],
-      "commands": [{ "command": "editor.emmet.action.matchTag" }]
+      "before": [
+        "m",
+        "t"
+      ],
+      "commands": [
+        {
+          "command": "editor.emmet.action.matchTag"
+        }
+      ]
     },
     {
-      "before": ["<C-a>"],
-      "after": ["g", "g", "V", "G"]
+      "before": [
+        "<C-a>"
+      ],
+      "after": [
+        "g",
+        "g",
+        "V",
+        "G"
+      ]
     },
     {
-      "before": ["S"],
-      "after": [":", "s", "/"]
+      "before": [
+        "S"
+      ],
+      "after": [
+        ":",
+        "s",
+        "/"
+      ]
     },
     {
-      "before": ["<C-b>", "c"],
-      "commands": ["bookmarks.clearFromAllFiles"]
+      "before": [
+        "<C-b>",
+        "c"
+      ],
+      "commands": [
+        "bookmarks.clearFromAllFiles"
+      ]
     },
     {
-      "before": ["<C-b>", "n"],
-      "commands": ["bookmarks.jumpToNext"]
+      "before": [
+        "<C-b>",
+        "n"
+      ],
+      "commands": [
+        "bookmarks.jumpToNext"
+      ]
     },
     {
-      "before": ["<C-b>", "n"],
-      "commands": ["bookmarks.jumpToNext"]
+      "before": [
+        "<C-b>",
+        "n"
+      ],
+      "commands": [
+        "bookmarks.jumpToNext"
+      ]
     },
     {
-      "before": ["<C-b>", "t"],
-      "commands": ["bookmarks.toggle"]
+      "before": [
+        "<C-b>",
+        "t"
+      ],
+      "commands": [
+        "bookmarks.toggle"
+      ]
     },
     {
-      "before": ["<C-b>", "m"],
-      "commands": ["bookmarks.toggleLabeled"]
+      "before": [
+        "<C-b>",
+        "m"
+      ],
+      "commands": [
+        "bookmarks.toggleLabeled"
+      ]
     },
     {
-      "before": ["<C-b>", "l"],
-      "commands": ["bookmarks.listFromAllFiles"]
+      "before": [
+        "<C-b>",
+        "l"
+      ],
+      "commands": [
+        "bookmarks.listFromAllFiles"
+      ]
     },
     {
-      "before": ["<C-n>"],
-      "commands": [":nohl"]
+      "before": [
+        "<C-n>"
+      ],
+      "commands": [
+        ":nohl"
+      ]
     },
     {
-      "before": ["f", "d"],
-      "after": ["g", "d"]
+      "before": [
+        "f",
+        "d"
+      ],
+      "after": [
+        "g",
+        "d"
+      ]
     },
     {
-      "before": ["Y"],
-      "after": ["y", "$"]
+      "before": [
+        "Y"
+      ],
+      "after": [
+        "y",
+        "$"
+      ]
     },
     {
-      "before": ["$"],
-      "after": ["g", "_"]
+      "before": [
+        "$"
+      ],
+      "after": [
+        "g",
+        "_"
+      ]
     },
     {
-      "before": ["T"],
-      "commands": ["add-arround.insertTemplate"]
+      "before": [
+        "T"
+      ],
+      "commands": [
+        "add-arround.insertTemplate"
+      ]
     }
   ],
   "vim.normalModeKeyBindingsNonRecursive": [
     {
-      "before": ["<Esc>"],
-      "commands": [":nohl"]
+      "before": [
+        "<Esc>"
+      ],
+      "commands": [
+        ":nohl"
+      ]
+    },
+    {
+      "before": [
+        "="
+      ],
+      "after": [
+        ""
+      ],
+      "commands": [
+        {
+          "command": "editor.action.reindentlines",
+          "args": []
+        }
+      ]
+    },
+    // Undo & Redo
+    {
+      "before": [
+        "u"
+      ],
+      "commands": [
+        "undo"
+      ]
+    },
+    {
+      "before": [
+        "c-r"
+      ],
+      "commands": [
+        "redo"
+      ]
     }
   ],
   "vim.easymotion": true,
@@ -156,7 +296,12 @@
     "<C-e>": false
   },
   "explorer.confirmDelete": false,
-  "eslint.validate": ["vue", "html", "javascript", "typescript"],
+  "eslint.validate": [
+    "vue",
+    "html",
+    "javascript",
+    "typescript"
+  ],
   "eslint.nodePath": "/usr/bin/node",
   "editor.lineNumbers": "relative",
   "editor.bracketPairColorization.enabled": false,
@@ -178,8 +323,8 @@
   "git.ignoreMissingGitWarning": true,
   // The number of spaces a tab is equal to. This setting is overridden
   // based on the file contents when `editor.detectIndentation` is true.
-  "editor.tabSize": 8,
-  "editor.detectIndentation": false,
+  "editor.tabSize": 4,
+  "editor.detectIndentation": true,
   // Insert spaces when pressing Tab. This setting is overriden
   // based on the file contents when `editor.detectIndentation` is true.
   "editor.insertSpaces": false,
@@ -188,13 +333,10 @@
   // the values you've explicitly set, above.
   "python.languageServer": "Pylance",
   "python.formatting.provider": "black",
-  "todo-tree.tree.showScanModeButton": false,
   "typescript.updateImportsOnFileMove.enabled": "always",
   "files.associations": {
     "*.html": "html"
   },
-  "angular.experimental-ivy": true,
-  "python.pythonPath": "/usr/local/bin/python3",
   "diffEditor.ignoreTrimWhitespace": false,
   "workbench.editorAssociations": {
     "*.ipynb": "jupyter-notebook"
@@ -226,35 +368,133 @@
   },
   "terminal.integrated.defaultProfile.linux": "zsh",
   "cSpell.enabled": true,
-  "i18n-ally.displayLanguage": "de",
-  "[cpp]": {
-    "editor.defaultFormatter": "ms-vscode.cpptools"
-  },
-  //   "explorer.experimental.fileNesting.enabled": true,
-  //   "explorer.experimental.fileNesting.expand": true,
-  //   "explorer.experimental.fileNesting.patterns": {
-  //     "*.go": "$(capture).go, $(capture)_test.go"
-  //   }
-  "java.jdt.ls.java.home": "/home/amr/.sdkman/candidates/java/current",
-  "kotlin.java.home": "/home/amr/.sdkman/candidates/java/20.3.3.0-mandrel",
-  "java.project.referencedLibraries": ["/home/amr/.gradle/caches//**//*.jar"],
-  "java.configuration.updateBuildConfiguration": "automatic",
   "[java]": {
     "editor.defaultFormatter": "redhat.java"
   },
-  "java.import.gradle.home": "/home/amr/.gradle/",
-  "redhat.telemetry.enabled": false,
-  "cSpell.enableFiletypes": ["kotlin"],
+  "cSpell.enableFiletypes": [
+    "kotlin"
+  ],
   "npm.keybindingsChangedWarningShown": true,
-  "cSpell.userWords": ["Knockable"],
-  "java.configuration.runtimes": [
-    {
-      "name": "JavaSE-18",
-      "path": "/home/amr/.sdkman/candidates/java/18.0.2-zulu",
-      "default": true
-    }
+  "cSpell.userWords": [
+    "Knockable",
+    "overfitting",
+    "proxied"
   ],
   "sync.removeExtensions": false,
   "sync.autoDownload": true,
-  "sync.gist": "f4b3be5de4e5802748aee2ae6cba2b6f"
+  "sync.gist": "67c823a94d8dece62a5456137bc524bf",
+  "jupyter.widgetScriptSources": [
+    "jsdelivr.com",
+    "unpkg.com"
+  ],
+  "liveshare.notebooks.allowGuestExecuteCells": true,
+  "xstate.nestTypegenFiles": false,
+  "explorer.fileNesting.patterns": {
+    "*.ts": "${capture}.js",
+    "*.js": "${capture}.js.map, ${capture}.min.js, ${capture}.d.ts",
+    "*.jsx": "${capture}.js",
+    "*.tsx": "${capture}.ts",
+    "tsconfig.json": "tsconfig.*.json",
+    "package.json": "package-lock.json, yarn.lock, pnpm-lock.yaml"
+  },
+  "aws.telemetry": false,
+  "workbench.colorTheme": "Visual Studio Light",
+  "go.toolsManagement.autoUpdate": true,
+  "auto-close-tag.activationOnLanguage": [
+    "HTML (Eex)"
+  ],
+  "jupyter.askForKernelRestart": false,
+  "redhat.telemetry.enabled": false,
+  "yaml.customTags": [
+    "!And",
+    "!And sequence",
+    "!If",
+    "!If sequence",
+    "!Not",
+    "!Not sequence",
+    "!Equals",
+    "!Equals sequence",
+    "!Or",
+    "!Or sequence",
+    "!FindInMap",
+    "!FindInMap sequence",
+    "!Base64",
+    "!Join",
+    "!Join sequence",
+    "!Cidr",
+    "!Ref",
+    "!Sub",
+    "!Sub sequence",
+    "!GetAtt",
+    "!GetAZs",
+    "!ImportValue",
+    "!ImportValue sequence",
+    "!Select",
+    "!Select sequence",
+    "!Split",
+    "!Split sequence"
+  ],
+  "highlight.regexes": {
+    "((?:<!-- *)?(?:#|// @|//|./\\*+|<!--|--|\\* @|{!|{{!--|{{!) *TODO(?:\\s*\\([^)]+\\))?:?)((?!\\w)(?: *-->| *\\*/| *!}| *--}}| *}}|(?= *(?:[^:]//|/\\*+|<!--|@|--|{!|{{!--|{{!))|(?: +[^\\n@]*?)(?= *(?:[^:]//|/\\*+|<!--|@|--(?!>)|{!|{{!--|{{!))|(?: +[^@\\n]+)?))": {
+      "filterFileRegex": ".*(?<!CHANGELOG.md)$",
+      "decorations": [
+        {
+          "overviewRulerColor": "#ffcc00",
+          "backgroundColor": "#ffcc00",
+          "color": "#1f1f1f",
+          "fontWeight": "bold"
+        },
+        {
+          "backgroundColor": "#ffcc00",
+          "color": "#1f1f1f"
+        }
+      ]
+    },
+    "((?:<!-- *)?(?:#|// @|//|./\\*+|<!--|--|\\* @|{!|{{!--|{{!) *(?:FIXME|FIX|BUG|UGLY|DEBUG|HACK)(?:\\s*\\([^)]+\\))?:?)((?!\\w)(?: *-->| *\\*/| *!}| *--}}| *}}|(?= *(?:[^:]//|/\\*+|<!--|@|--|{!|{{!--|{{!))|(?: +[^\\n@]*?)(?= *(?:[^:]//|/\\*+|<!--|@|--(?!>)|{!|{{!--|{{!))|(?: +[^@\\n]+)?))": {
+      "filterFileRegex": ".*(?<!CHANGELOG.md)$",
+      "decorations": [
+        {
+          "overviewRulerColor": "#cc0000",
+          "backgroundColor": "#cc0000",
+          "color": "#1f1f1f",
+          "fontWeight": "bold"
+        },
+        {
+          "backgroundColor": "#cc0000",
+          "color": "#1f1f1f"
+        }
+      ]
+    },
+    "((?:<!-- *)?(?:#|// @|//|./\\*+|<!--|--|\\* @|{!|{{!--|{{!) *(?:REVIEW|OPTIMIZE|TSC)(?:\\s*\\([^)]+\\))?:?)((?!\\w)(?: *-->| *\\*/| *!}| *--}}| *}}|(?= *(?:[^:]//|/\\*+|<!--|@|--|{!|{{!--|{{!))|(?: +[^\\n@]*?)(?= *(?:[^:]//|/\\*+|<!--|@|--(?!>)|{!|{{!--|{{!))|(?: +[^@\\n]+)?))": {
+      "filterFileRegex": ".*(?<!CHANGELOG.md)$",
+      "decorations": [
+        {
+          "overviewRulerColor": "#00ccff",
+          "backgroundColor": "#00ccff",
+          "color": "#1f1f1f",
+          "fontWeight": "bold"
+        },
+        {
+          "backgroundColor": "#00ccff",
+          "color": "#1f1f1f"
+        }
+      ]
+    },
+    "((?:<!-- *)?(?:#|// @|//|./\\*+|<!--|--|\\* @|{!|{{!--|{{!) *(?:IDEA)(?:\\s*\\([^)]+\\))?:?)((?!\\w)(?: *-->| *\\*/| *!}| *--}}| *}}|(?= *(?:[^:]//|/\\*+|<!--|@|--|{!|{{!--|{{!))|(?: +[^\\n@]*?)(?= *(?:[^:]//|/\\*+|<!--|@|--(?!>)|{!|{{!--|{{!))|(?: +[^@\\n]+)?))": {
+      "filterFileRegex": ".*(?<!CHANGELOG.md)$",
+      "decorations": [
+        {
+          "overviewRulerColor": "#cc00cc",
+          "backgroundColor": "#cc00cc",
+          "color": "#1f1f1f",
+          "fontWeight": "bold"
+        },
+        {
+          "backgroundColor": "#cc00cc",
+          "color": "#1f1f1f"
+        }
+      ]
+    }
+  },
+  "terminal.integrated.enableMultiLinePasteWarning": false
 }
