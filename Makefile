@@ -57,6 +57,7 @@ else
 		jq \
 		bat \
 		imagemagick \
+		ripgrep \
 		apt-transport-https
 
  
