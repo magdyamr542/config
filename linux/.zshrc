@@ -142,12 +142,6 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 
-[ -f "$HOME/.proot/entryPoint.sh" ] && source "$HOME/.proot/entryPoint.sh" 
-[ -f "$HOME/.aliases.sh" ] && source "$HOME/.aliases.sh" 
-[ -f "$HOME/.funcs.sh" ] && source "$HOME/.funcs.sh" 
-[ -f "$HOME/.fzf.zsh" ] && source "$HOME/.fzf.zsh" 
-[ -f "$HOME/.gvm/scripts/gvm" ] && source "$HOME/.gvm/scripts/gvm" 
-
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
@@ -164,8 +158,17 @@ compinit
 # helm auto completion
 [[ -s "$HOME/.helm-auto-complete.zsh" ]] && source "$HOME/.helm-auto-complete.zsh"
 
+
 # source my custom bin
 export PATH=$HOME/bin:$PATH
 
 # source go bin
 export PATH=$PATH:$HOME/go/bin
+
+[ -f "$HOME/.proot/entrypoint.sh" ] && source "$HOME/.proot/entrypoint.sh" 
+[ -f "$HOME/.aliases.sh" ] && source "$HOME/.aliases.sh" 
+[ -f "$HOME/.funcs.sh" ] && source "$HOME/.funcs.sh" 
+[ -f "$HOME/.fzf.zsh" ] && source "$HOME/.fzf.zsh" 
+[ -f "$HOME/.gvm/scripts/gvm" ] && source "$HOME/.gvm/scripts/gvm" 
+
+SUDO_EDITOR=$HOME/bin/nvim
