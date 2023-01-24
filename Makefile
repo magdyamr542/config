@@ -64,10 +64,6 @@ else
 	
 endif
 
-# fd
-fd:
-	@echo "installing fd command"
-	sudo apt install fd-find
 
 # zsh stuff
 zsh:
