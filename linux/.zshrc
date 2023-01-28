@@ -165,10 +165,25 @@ export PATH=$HOME/bin:$PATH
 # source go bin
 export PATH=$PATH:$HOME/go/bin
 
-[ -f "$HOME/.proot/entrypoint.sh" ] && source "$HOME/.proot/entrypoint.sh" 
-[ -f "$HOME/.aliases.sh" ] && source "$HOME/.aliases.sh" 
-[ -f "$HOME/.funcs.sh" ] && source "$HOME/.funcs.sh" 
-[ -f "$HOME/.fzf.zsh" ] && source "$HOME/.fzf.zsh" 
-[ -f "$HOME/.gvm/scripts/gvm" ] && source "$HOME/.gvm/scripts/gvm" 
+
+if [ -f "$HOME/.proot/entryPoint.sh" ]; then
+  source "$HOME/.proot/entryPoint.sh"
+fi
+
+if [ -f "$HOME/.aliases.sh" ]; then
+  source "$HOME/.aliases.sh"
+fi
+
+if [ -f "$HOME/.funcs.sh" ]; then
+  source "$HOME/.funcs.sh"
+fi
+
+if [ -f "$HOME/.fzf.zsh" ]; then
+  source "$HOME/.fzf.zsh"
+fi
+
+if [ -f "$HOME/.gvm/scripts/gvm" ]; then
+  source "$HOME/.gvm/scripts/gvm"
+fi
 
 SUDO_EDITOR=$HOME/bin/nvim
