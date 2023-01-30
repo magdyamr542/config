@@ -33,4 +33,3 @@ alias k="kubectl"
 # new docker compose
 alias docker-compose="docker compose"
 
-alias clrd="rm -rf ~/Downloads/*"
