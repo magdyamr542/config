@@ -165,6 +165,10 @@ export PATH=$HOME/bin:$PATH
 # source go bin
 export PATH=$PATH:$HOME/go/bin
 
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+
 
 if [ -f "$HOME/.proot/entryPoint.sh" ]; then
   source "$HOME/.proot/entryPoint.sh"
@@ -187,3 +191,4 @@ if [ -f "$HOME/.gvm/scripts/gvm" ]; then
 fi
 
 SUDO_EDITOR=$HOME/bin/nvim
+GOROOT=$HOME/go
