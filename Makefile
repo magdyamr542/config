@@ -58,7 +58,8 @@ else
 		bat \
 		imagemagick \
 		ripgrep \
-		apt-transport-https
+		apt-transport-https \
+		python3-pip
 
  
 	
