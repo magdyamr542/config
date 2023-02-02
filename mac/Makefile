@@ -27,7 +27,8 @@ install-packages:
 		jq \
 		tree \
 		fd \
-		visual-studio-code
+		visual-studio-code \
+		httpie
 
 
 # zsh stuff
