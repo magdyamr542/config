@@ -144,5 +144,8 @@ aws-cli:
 
 virtualbox:
 	brew install --cask virtualbox
+vagrant:
+	brew tap hashicorp/tap
+	brew install hashicorp/tap/vagrant
 
 .PHONY: nvim zsh install install-packages link all autojump

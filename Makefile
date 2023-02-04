@@ -3,7 +3,7 @@ HOMEDIR=${HOME}
 PATH_VAR=${PATH}
 CURRENT_USER=${USER}
 THINGS_TO_LINK=.zshrc .tmux.conf 
-
+VAGRANT_LSB_RELEASE := $(shell lsb_release -c)
 UNAME := $(shell uname)
 
 all: install
@@ -201,6 +201,12 @@ ansible:
 
 virtualbox:
 	sudo apt-get install virtualbox
+
+vagrant:
+	wget -O- https://apt.releases.hashicorp.com/gpg | gpg --dearmor | sudo tee /usr/share/keyrings/hashicorp-archive-keyring.gpg
+	echo "deb [signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com $(VAGRANT_LSB_RELEASE) main" | sudo tee /etc/apt/sources.list.d/hashicorp.list
+	sudo apt update && sudo apt install vagrant
+
 
 screen-recorder:
 	sudo add-apt-repository ppa:atareao/atareao
