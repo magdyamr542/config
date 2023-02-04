@@ -200,7 +200,9 @@ ansible:
 	sudo apt install -y ansible
 
 virtualbox:
-	sudo apt-get install virtualbox
+	wget https://download.virtualbox.org/virtualbox/7.0.6/virtualbox-7.0_7.0.6-155176~Ubuntu~jammy_amd64.deb
+	sudo apt --fix-broken install ./virtualbox-7.0_7.0.6-155176~Ubuntu~jammy_amd64.deb
+	rm virtualbox-7.0_7.0.6-155176~Ubuntu~jammy_amd64.deb
 
 vagrant:
 	wget -O- https://apt.releases.hashicorp.com/gpg | gpg --dearmor | sudo tee /usr/share/keyrings/hashicorp-archive-keyring.gpg
