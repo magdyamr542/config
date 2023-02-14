@@ -20,3 +20,8 @@ cap () {
   tee /tmp/capture.out;
   cat /tmp/capture.out | xsel -ib 
 } 
+
+# sourcing an env file manually with the env-reader utlity https://github.com/magdyamr542/env-reader
+sourceenv() {
+ sed '/^#/d;/^[[:space:]]*$/d' "$1" | while read -r line; do export "$line"; done    
+}
