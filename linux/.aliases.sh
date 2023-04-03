@@ -1,4 +1,4 @@
-#user defined aliases
+# General
 alias open="xdg-open"
 alias down="open ~/Downloads/"
 alias fzf="fzf --preview 'bat --style=numbers --color=always --line-range :500 {}' --preview-window=right:65%"
@@ -18,18 +18,9 @@ alias glog="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset
 #Vim
 alias vim="nvim"
 
-# Tmux layouts
-alias tvim="tmux source vim-terminal.conf" # vim with two terminals
-
-
-# Using astah
-alias java8="sdk use java 8.0.322.fx-zulu"
-alias java11="sdk use java 11.0.14.10.1-amzn"
-
 # Using kubernetes
 alias k="kubectl"
 
-
-# new docker compose
+# New docker compose
 alias docker-compose="docker compose"
 
