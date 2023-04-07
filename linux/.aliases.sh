@@ -1,5 +1,6 @@
 # General
 alias open="xdg-open"
+alias o="xdg-open"
 alias down="open ~/Downloads/"
 alias fzf="fzf --preview 'bat --style=numbers --color=always --line-range :500 {}' --preview-window=right:65%"
 alias clrScreenshots="rm ~/Pictures/*"
@@ -23,4 +24,7 @@ alias k="kubectl"
 
 # New docker compose
 alias docker-compose="docker compose"
+
+# Screen recording
+alias record="recordmydesktop"
 
