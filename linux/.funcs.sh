@@ -25,3 +25,81 @@ cap () {
 sourceenv() {
  sed '/^#/d;/^[[:space:]]*$/d' "$1" | while read -r line; do export "$line"; done    
 }
+
+
+# see the permissions in a huamn readable format using octal notation
+octal () {
+if [[ $# -eq 0 ]]; then
+  echo "Please provide an octal notation as an argument."
+  return 1
+fi
+
+if ! [[ "$1" =~ ^[0-7]{1,3}$ ]]; then
+  echo "Invalid octal notation."
+  return 1
+fi
+
+mode="$1"
+owner=""
+group=""
+others=""
+
+# Owner permissions
+if [[ "${mode:0:1}" == "7" ]]; then
+  owner+="rwx"
+elif [[ "${mode:0:1}" == "6" ]]; then
+  owner+="rw-"
+elif [[ "${mode:0:1}" == "5" ]]; then
+  owner+="r-x"
+elif [[ "${mode:0:1}" == "4" ]]; then
+  owner+="r--"
+elif [[ "${mode:0:1}" == "3" ]]; then
+  owner+="-wx"
+elif [[ "${mode:0:1}" == "2" ]]; then
+  owner+="-w-"
+elif [[ "${mode:0:1}" == "1" ]]; then
+  owner+="--x"
+else
+  owner+="---"
+fi
+
+# Group permissions
+if [[ "${mode:1:1}" == "7" ]]; then
+  group+="rwx"
+elif [[ "${mode:1:1}" == "6" ]]; then
+  group+="rw-"
+elif [[ "${mode:1:1}" == "5" ]]; then
+  group+="r-x"
+elif [[ "${mode:1:1}" == "4" ]]; then
+  group+="r--"
+elif [[ "${mode:1:1}" == "3" ]]; then
+  group+="-wx"
+elif [[ "${mode:1:1}" == "2" ]]; then
+  group+="-w-"
+elif [[ "${mode:1:1}" == "1" ]]; then
+  group+="--x"
+else
+  group+="---"
+fi
+
+# Others permissions
+if [[ "${mode:2:1}" == "7" ]]; then
+  others+="rwx"
+elif [[ "${mode:2:1}" == "6" ]]; then
+  others+="rw-"
+elif [[ "${mode:2:1}" == "5" ]]; then
+  others+="r-x"
+elif [[ "${mode:2:1}" == "4" ]]; then
+  others+="r--"
+elif [[ "${mode:2:1}" == "3" ]]; then
+  others+="-wx"
+elif [[ "${mode:2:1}" == "2" ]]; then
+  others+="-w-"
+elif [[ "${mode:2:1}" == "1" ]]; then
+  others+="--x"
+else
+  others+="---"
+fi
+
+echo "$owner$group$others"
+}
