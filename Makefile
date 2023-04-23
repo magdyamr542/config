@@ -245,6 +245,9 @@ endif
 	git clone https://github.com/jwilm/alacritty.git
 	cd alacritty
 	cargo build --release
+	# color themes
+	git clone https://github.com/eendroroy/alacritty-theme.git ~/.alacritty-colorscheme
+
 
 
 .PHONY: nvim zsh install install-packages link all autojump
