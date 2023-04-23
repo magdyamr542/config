@@ -230,4 +230,21 @@ docker-remove:
 		@echo "Removed docker"
 		@echo "Make sure to remove any groups that were created when installing"
 
+
+CARGO := $(shell command -v cargo 2> /dev/null)
+
+alacritty:
+sudo add-apt-repository ppa:aslatter/ppa -y
+sudo apt install alacritty
+sudo apt install cmake pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev python3 -y
+ifndef CARGO
+	@echo "installing rust..."
+	sudo curl https://sh.rustup.rs -sSf | sh
+endif
+	@echo "cargo is there"
+	git clone https://github.com/jwilm/alacritty.git
+	cd alacritty
+	cargo build --release
+
+
 .PHONY: nvim zsh install install-packages link all autojump
