@@ -100,6 +100,9 @@ set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
 
+# lock the screen
+bindsym $mod+Control+l exec i3lock 
+
 # switch to workspace
 bindsym $mod+1 workspace number $ws1
 bindsym $mod+2 workspace number $ws2
@@ -172,3 +175,4 @@ bindsym XF86MonBrightnessDown exec --no-startup-id light -U 10
 # Auto start some apps
 exec google-chrome
 exec i3-sensible-terminal
+
