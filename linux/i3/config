@@ -1,10 +1,11 @@
 # Logo key. Use Mod1 for Alt. Mod4 for Super key (windows) 
-set $mod Mod1
+set $mod Mod4
 
 # window padding
 for_window [class="^.*"] border pixel 3
 gaps inner 15
 gaps outer 10
+smart_gaps on
 
 # Home row direction keys, like vim
 set $left h
@@ -173,14 +174,17 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
     position top
-	status_command bumblebee-status -t iceberg-contrast -m layout amixer battery-upower datetime
+	status_command bumblebee-status -t iceberg-contrast -m layout battery-upower datetime
 }
+
+# Suspend the system
+bindsym $mod+Control+s exec --no-startup-id i3lock && systemctl suspend
 
 # Control brithness
 bindsym XF86MonBrightnessUp exec --no-startup-id $HOME/.config/config/linux/scripts/update-brithness.sh up
 bindsym XF86MonBrightnessDown exec --no-startup-id $HOME/.config/config/linux/scripts/update-brithness.sh down 
 
-# Auto start alacritty and the wifi applet
-exec alacritty -o font.size=8
-exec --no-startup-id nm-applet
-
+# Some commands to execute on startup 
+exec alacritty -o font.size=8 # start alacritty 
+exec --no-startup-id nm-applet #show wifi applet
+exec --no-startup-id xautolock -time 4 -locker $HOME/.config/config/linux/scripts/suspend.sh # suspend after 4 min of inactivity
