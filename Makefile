@@ -249,5 +249,7 @@ endif
 	git clone https://github.com/eendroroy/alacritty-theme.git ~/.alacritty-colorscheme
 
 
+i3:
+	apt install -y i3 network-manager network-manager-gnome xautolock light i3lock rofi
 
 .PHONY: nvim zsh install install-packages link all autojump
