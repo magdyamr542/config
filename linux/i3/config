@@ -33,7 +33,7 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec alacritty -o font.size=6
+bindsym $mod+Return exec alacritty -o font.size=8
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -182,10 +182,10 @@ bar {
 bindsym $mod+Control+s exec --no-startup-id i3lock && systemctl suspend
 
 # Control brithness
-bindsym XF86MonBrightnessUp exec --no-startup-id $HOME/.config/config/linux/scripts/update-brithness.sh up
-bindsym XF86MonBrightnessDown exec --no-startup-id $HOME/.config/config/linux/scripts/update-brithness.sh down 
+bindsym XF86MonBrightnessUp exec --no-startup-id $HOME/.config/config/linux/i3/scripts/update-brithness.sh up
+bindsym XF86MonBrightnessDown exec --no-startup-id $HOME/.config/config/linux/i3/scripts/update-brithness.sh down
 
 # Some commands to execute on startup 
-exec alacritty -o font.size=6 # start alacritty 
+exec alacritty -o font.size=8 # start alacritty 
 exec --no-startup-id nm-applet #show wifi applet
-exec --no-startup-id xautolock -time 4 -locker $HOME/.config/config/linux/scripts/suspend.sh # suspend after 4 min of inactivity
+exec --no-startup-id xautolock -time 4 -locker "i3lock && systemctl suspend"
