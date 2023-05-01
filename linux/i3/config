@@ -4,8 +4,7 @@ set $mod Mod4
 # window padding
 for_window [class="^.*"] border pixel 3
 gaps inner 15
-gaps outer 10
-smart_gaps on
+gaps outer 5
 
 # Home row direction keys, like vim
 set $left h
@@ -25,8 +24,8 @@ set $menu "rofi -i -modi drun,run,window -show drun -theme dracula"
 font pango:MesloLGM Nerd Font Mono 10
 
 # Use pactl to adjust volume in PulseAudio.
-bindsym XF86AudioRaiseVolume exec --no-startup-id $HOME/.config/config/linux/scripts/update-volume.sh up 
-bindsym XF86AudioLowerVolume exec --no-startup-id $HOME/.config/config/linux/scripts/update-volume.sh down 
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% 
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10%  
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle 
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle 
 
@@ -34,7 +33,7 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec alacritty -o font.size=8
+bindsym $mod+Return exec alacritty -o font.size=6
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -174,7 +173,9 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
     position top
-	status_command bumblebee-status -t iceberg-contrast -m layout battery-upower datetime
+	status_command bumblebee-status -m layout battery date time \
+    pasink pasource -p date.format="%a, %b %d %Y". time.format="%H:%M CW %V" \
+    -t solarized-powerline
 }
 
 # Suspend the system
@@ -185,6 +186,6 @@ bindsym XF86MonBrightnessUp exec --no-startup-id $HOME/.config/config/linux/scri
 bindsym XF86MonBrightnessDown exec --no-startup-id $HOME/.config/config/linux/scripts/update-brithness.sh down 
 
 # Some commands to execute on startup 
-exec alacritty -o font.size=8 # start alacritty 
+exec alacritty -o font.size=6 # start alacritty 
 exec --no-startup-id nm-applet #show wifi applet
 exec --no-startup-id xautolock -time 4 -locker $HOME/.config/config/linux/scripts/suspend.sh # suspend after 4 min of inactivity
