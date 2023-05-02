@@ -110,7 +110,8 @@ set $ws9 "9"
 set $ws10 "10"
 
 # lock the screen
-bindsym $mod+Control+l exec i3lock 
+set $i3lock_command i3lock -i ~/.wallpaper.png  
+bindsym $mod+Control+l exec $i3lock_command
 
 # switch to workspace
 bindsym $mod+1 workspace number $ws1
@@ -180,7 +181,7 @@ bar {
 }
 
 # Suspend the system
-bindsym $mod+Control+s exec --no-startup-id i3lock && systemctl suspend
+bindsym $mod+Control+s exec --no-startup-id $i3lock_command && systemctl suspend
 
 # Control brithness
 bindsym XF86MonBrightnessUp exec --no-startup-id $HOME/.config/config/linux/i3/scripts/update-brithness.sh up
@@ -189,5 +190,5 @@ bindsym XF86MonBrightnessDown exec --no-startup-id $HOME/.config/config/linux/i3
 # Some commands to execute on startup 
 exec alacritty -o font.size=8 # start alacritty 
 exec --no-startup-id nm-applet #show wifi applet
-exec --no-startup-id xautolock -time 4 -locker "i3lock && systemctl suspend"
-feh --bg-scale --zoom fill ~/.wallpaper.png # set wallpaper. image in the config. a symlink needs to be created for it
+exec --no-startup-id xautolock -time 4 -locker $i3lock_command && systemctl suspend
+exec --no-startup-id feh --bg-scale --zoom fill ~/.wallpaper.png # set wallpaper. image in the config. a symlink needs to be created for it
