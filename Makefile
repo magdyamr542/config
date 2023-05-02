@@ -251,6 +251,6 @@ endif
 
 
 i3:
-	apt install -y i3 network-manager network-manager-gnome xautolock light i3lock rofi feh
+	apt install -y i3 network-manager network-manager-gnome xautolock light i3lock rofi feh scrot
 
 .PHONY: nvim zsh install install-packages link all autojump

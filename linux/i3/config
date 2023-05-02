@@ -15,6 +15,9 @@ set $right l
 # rename workspace
 bindsym $mod+n exec i3-input -F 'rename workspace to "%s"' -P 'New name for this workspace: '
 
+# take screenshot
+bindsym Print exec date -u "+%Y-%m-%d-%H-%M-%S" | xargs -I date scrot --file ~/Pictures/Screenshots/Screenshot-from-date.png && notify-send -t 1500 Screenshot "Success "
+
 # Your preferred application launcher
 #set $menu dmenu_run
 set $menu "rofi -i -modi drun,run,window -show drun -theme dracula"
