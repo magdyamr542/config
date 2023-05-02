@@ -175,8 +175,8 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
     position top
-	status_command bumblebee-status -m layout battery date time \
-    pasink pasource -p date.format="%a, %b %d %Y". time.format="%H:%M CW %V" \
+	status_command bumblebee-status -m layout battery pasink pasource \
+     date time -p date.format="%a, %b %d %Y". time.format="%H:%M CW %V" \
     -t solarized-powerline
 }
 
