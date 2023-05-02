@@ -9,8 +9,9 @@ UNAME := $(shell uname)
 all: install
 
 link:
-	@echo "creating symlinks for [.tmux.conf, .zshrc, .aliases.sh , .funcs.sh]"
+	@echo "creating symlinks for [.tmux.conf, .zshrc, .aliases.sh , .funcs.sh, wallpaper.png]"
 	ln -f -s ${PWD}/tmux/.tmux.conf $(HOMEDIR)/.tmux.conf
+	ln -f -s ${PWD}/linux/i3/wallpaper.png $(HOMEDIR)/.wallpaper.png
 	ln -f -s ${PWD}/linux/.aliases.sh $(HOMEDIR)/.aliases.sh
 	ln -f -s ${PWD}/linux/.funcs.sh $(HOMEDIR)/.funcs.sh
 	mkdir -p $(HOMEDIR)/bin
@@ -250,6 +251,6 @@ endif
 
 
 i3:
-	apt install -y i3 network-manager network-manager-gnome xautolock light i3lock rofi
+	apt install -y i3 network-manager network-manager-gnome xautolock light i3lock rofi feh
 
 .PHONY: nvim zsh install install-packages link all autojump
