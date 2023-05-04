@@ -179,7 +179,7 @@ bindsym $mod+r mode "resize"
 bar {
     position top
 	status_command bumblebee-status -m layout battery pasink pasource \
-     date time -p date.format="%a, %b %d %Y". time.format="%H:%M CW %V" \
+     date time -p date.format="%a, %b %d %Y". time.format="%H:%M CW %V" interval=2.5 \
     -t solarized-powerline
 }
 
@@ -192,5 +192,5 @@ bindsym XF86MonBrightnessDown exec --no-startup-id $HOME/.config/config/linux/i3
 
 # Starup
 exec --no-startup-id nm-applet #show wifi applet
-exec --no-startup-id xautolock -time 4 -locker $i3lock_command && systemctl suspend # sleep after inactivity
+exec --no-startup-id xautolock -time 10 -locker 'systemctl suspend' -notify 600 -notifier 'i3lock | xset dpms force off' & # sleep after inactivity
 exec --no-startup-id feh --bg-scale --zoom fill ~/.wallpaper.png # set wallpaper. image in the config. a symlink needs to be created for it
