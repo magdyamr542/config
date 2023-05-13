@@ -178,8 +178,8 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
     position top
-	status_command bumblebee-status -m battery date \
-    time -p date.format="%a, %b %d %Y". time.format="%H:%M CW %V" interval=2.5 \
+	status_command bumblebee-status -m battery time\
+    date -p date.format="%a, %b %d %Y". time.format="%H:%M CW %V" interval=5 \
     -t solarized-powerline
 }
 
