@@ -121,6 +121,13 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=245'
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 [[ -s /home/amr/.autojump/etc/profile.d/autojump.sh ]] && source /home/amr/.autojump/etc/profile.d/autojump.sh
+
+# >>>> More Zsh completion (start)
+fpath=(/opt/vagrant/embedded/gems/2.3.3/gems/vagrant-2.3.3/contrib/zsh $fpath)
+fpath=($ZSH/plugins/zsh-completions/src $fpath)
+compinit
+# <<<<  More Zsh completion (end)
+
 autoload -U compinit && compinit
 export VISUAL=nvim
 export EDITOR="$VISUAL"

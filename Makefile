@@ -93,6 +93,7 @@ oh-my-zsh:
 oh-my-zsh-plugins:
 	git clone https://github.com/zsh-users/zsh-autosuggestions $(HOMEDIR)/.oh-my-zsh/custom/plugins/zsh-autosuggestions
 	git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $(HOMEDIR)/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+    git clone https://github.com/zsh-users/zsh-completions $(HOMEDIR)/.oh-my-zsh/plugins/zsh-completions
 
 
 powerlevel10k:
