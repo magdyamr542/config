@@ -3,6 +3,13 @@ doesCommandExist () {
   return $(command -v $1 &> /dev/null)
 }
 
+openpdf() {
+    #do things with parameters like $1 such as
+    xdg-open "$1"&!
+}
+
+
+
 # easy cp of file
 cpfile () {
   if  doesCommandExist xsel
@@ -102,4 +109,19 @@ else
 fi
 
 echo "$owner$group$others"
+}
+
+
+ fzf-git-branch() {
+    git rev-parse HEAD > /dev/null 2>&1 || return
+
+    git branch --color=always --all --sort=-committerdate |
+        grep -v HEAD |
+        fzf --height 75% --ansi --no-multi --preview-window right:65% \
+            --preview 'git log -n 50 --color=always --date=short --pretty="format:%C(auto)%cd %h%d %s" $(sed "s/.* //" <<< {})' |
+        sed "s/.* //"
+}
+
+ gch() {
+   git checkout $(fzf-git-branch)
 }
