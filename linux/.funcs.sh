@@ -8,6 +8,11 @@ openpdf() {
     xdg-open "$1"&!
 }
 
+opdf() {
+    #do things with parameters like $1 such as
+    xdg-open "$1"&!
+}
+
 
 
 # easy cp of file

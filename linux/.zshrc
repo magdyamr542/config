@@ -123,7 +123,7 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=245'
 [[ -s /home/amr/.autojump/etc/profile.d/autojump.sh ]] && source /home/amr/.autojump/etc/profile.d/autojump.sh
 
 # >>>> More Zsh completion (start)
-fpath=(/opt/vagrant/embedded/gems/2.3.3/gems/vagrant-2.3.3/contrib/zsh $fpath)
+fpath=(/opt/vagrant/embedded/gems/gems/vagrant-2.3.6/contrib/zsh $fpath)
 fpath=($ZSH/plugins/zsh-completions/src $fpath)
 compinit
 # <<<<  More Zsh completion (end)
