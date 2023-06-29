@@ -103,6 +103,7 @@ powerlevel10k:
 	git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $(HOMEDIR)/.oh-my-zsh/custom/themes/powerlevel10k
 	@echo "resource ~/.zshrc in order for the changes to take effect"
 
+
 zsh-final:
 	ln -f -s ${PWD}/linux/.zshrc $(HOMEDIR)/.zshrc
 
@@ -236,9 +237,9 @@ docker-remove:
 CARGO := $(shell command -v cargo 2> /dev/null)
 
 alacritty:
-sudo add-apt-repository ppa:aslatter/ppa -y
-sudo apt install alacritty
-sudo apt install cmake pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev python3 -y
+	sudo add-apt-repository ppa:aslatter/ppa -y
+	sudo apt install alacritty
+	sudo apt install cmake pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev python3 -y
 ifndef CARGO
 	@echo "installing rust..."
 	sudo curl https://sh.rustup.rs -sSf | sh
