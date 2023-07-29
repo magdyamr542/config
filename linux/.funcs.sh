@@ -3,7 +3,7 @@ doesCommandExist () {
   return $(command -v $1 &> /dev/null)
 }
 
-openpdf() {
+pdf() {
     #do things with parameters like $1 such as
     xdg-open "$1"&!
 }
