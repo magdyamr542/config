@@ -6,6 +6,7 @@ scrolling:
   multiplier: 3
 
 font:
+  size: 8
   normal:
     family: MesloLGM Nerd Font Mono
     style:  Regular
