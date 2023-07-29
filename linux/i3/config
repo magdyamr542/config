@@ -3,7 +3,7 @@ set $mod Mod4
 
 # window padding
 for_window [class="^.*"] border pixel 3
-gaps inner 15
+gaps inner 10
 gaps outer 5
 
 focus_on_window_activation focus
@@ -39,7 +39,7 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec alacritty -o font.size=8
+bindsym $mod+Return exec alacritty 
 
 # kill focused window
 bindsym $mod+Shift+q kill
