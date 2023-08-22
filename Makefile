@@ -191,7 +191,7 @@ backup-installed-commands:
 aws-cli:
 	curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
 	unzip awscliv2.zip
-	./aws/install -i /usr/local/aws-cli -b /usr/local/bin
+	sudo ./aws/install
 	sudo rm -rf aws awscliv2.zip
 
 ngrok:
