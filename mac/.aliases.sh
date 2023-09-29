@@ -1,22 +1,19 @@
-# System
-alias clrd="rm -rf ~/Downloads/*"
-alias clrtrash="rm -rf ~/.Trash/*"
-alias down=" open  ~/Downloads"
-alias iploc="ipconfig getifaddr en0"
-alias wifihosts="nmap -sn 192.168.178.38/24 | grep MAC | tr -s ' ' | cut -d ' ' -f 4-"
-#Daily Usage
-alias t="tree"
-alias youtube="open http://www.youtube.com"
+# General
+alias o="open"
 alias fzf="fzf --preview 'bat --style=numbers --color=always --line-range :500 {}' --preview-window=right:65%"
-
-alias genc="/usr/local/Cellar/genact/0.11.0/bin/genact"
-alias vim="nvim"
-
+alias t='tree'
 
 # Git
-alias gpl="git pull"
-alias gcm="git commit -m"
+alias gcm='git commit -m'
+alias gpl='git pull'
 alias glc='git add .; git commit --amend --no-edit' # add changes to last commit (glc git last commit)
+alias glog="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative"
 
-# open the repo in the browser 
-alias show-repo='open $(git config --get remote.origin.url  | cut -d ":" -f 2 | xargs -I repo echo  https://github.com/repo | rev | cut -c5- | rev)'
+#Vim
+alias vim="nvim"
+
+# Using kubernetes
+alias k="kubectl"
+
+# New docker compose
+alias docker-compose="docker compose"

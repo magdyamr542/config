@@ -147,3 +147,12 @@ echo "$owner$group$others"
         git checkout $branch;
     fi
 }
+
+awsExportCredentials () {
+  echo Exporting credentials for profile $1
+  eval $(aws configure export-credentials --profile $1 --format env)
+  if [ "$?" -ne 0 ]; then
+     echo "These are the existing profiles"
+     aws configure list-profiles
+  fi
+}

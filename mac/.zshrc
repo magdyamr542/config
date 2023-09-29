@@ -5,22 +5,16 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-EDITOR=nvim
-
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
-#
-#
-export LANG=en_US.UTF-8
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/apple/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="powerlevel10k/powerlevel10k"
+
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in $ZSH/themes/
@@ -35,10 +29,13 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # HYPHEN_INSENSITIVE="true"
 
 # Uncomment the following line to disable bi-weekly auto-update checks.
-# DISABLE_AUTO_UPDATE="true"
+ DISABLE_AUTO_UPDATE="true"
 
 # Uncomment the following line to automatically update without prompting.
- DISABLE_UPDATE_PROMPT="true"
+# DISABLE_UPDATE_PROMPT="true"
+
+# prevents ZSH from adding a % sign to the end of lines. https://unix.stackexchange.com/questions/167582/why-zsh-ends-a-line-with-a-highlighted-percent-symbol
+PROMPT_EOL_MARK=''
 
 # Uncomment the following line to change how often to auto-update (in days).
  export UPDATE_ZSH_DAYS=13
@@ -53,7 +50,7 @@ DISABLE_MAGIC_FUNCTIONS="true"
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
- #ENABLE_CORRECTION="true"
+# ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 # COMPLETION_WAITING_DOTS="true"
@@ -62,7 +59,7 @@ DISABLE_MAGIC_FUNCTIONS="true"
 # under VCS as dirty. This makes repository status check for large repositories
 # much, much faster.
 # DISABLE_UNTRACKED_FILES_DIRTY="true"
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
 # Uncomment the following line if you want to change the command execution time
 # stamp shown in the history command output.
 # You can set one of the optional three formats:
@@ -73,60 +70,45 @@ source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
+
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-    git 
-    zsh-autosuggestions 
-    zsh-syntax-highlighting 
-    docker 
-    docker-compose 
-    autojump 
-    colored-man-pages 
-    history-substring-search 
-    )
-
-ZSH_DISABLE_COMPFI="true"
+  git
+  zsh-autosuggestions
+  zsh-syntax-highlighting
+  docker
+  docker-compose
+  autojump
+  colored-man-pages
+  history-substring-search
+  fd
+)
 source $ZSH/oh-my-zsh.sh
 ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=245'
 
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-export PATH="$HOME/bin/:$PATH:$HOME/go/bin"
-export vim="neovim"
+# User configuration
 
-set -o vi
+# export MANPATH="/usr/local/man:$MANPATH"
 
-bindkey -M viins jj vi-cmd-mode 
+# You may need to manually set your language environment
+# export LANG=en_US.UTF-8
 
-# Yank to the system clipboard
-function vi-yank-xclip {
-    zle vi-yank
-   echo "$CUTBUFFER" | pbcopy -i
-}
-zle -N vi-yank-xclip
-bindkey -M vicmd 'y' vi-yank-xclip
+# Preferred editor for local and remote sessions
+# if [[ -n $SSH_CONNECTION ]]; then
+#   export EDITOR='vim'
+# else
+#   export EDITOR='mvim'
+# fi
 
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-export FZF_DEFAULT_COMMAND='fd --type file --follow --hidden --exclude .git'
-export FZF_CTRL_T_COMMAND='fd --type file --follow --hidden --exclude .git'
-
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="$HOME/.sdkman"
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
-
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
-[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
-
+# Compilation flags
+# export ARCHFLAGS="-arch x86_64"
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -134,6 +116,91 @@ export NVM_DIR="$HOME/.nvm"
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
- source $HOME/.aliases.sh
+# alias zshconfig="mate ~/.zshrc"
+# alias ohmyzsh="mate ~/.oh-my-zsh"
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+[[ -s "$HOME/.autojump/etc/profile.d/autojump.sh" ]] && source "$HOME/.autojump/etc/profile.d/autojump.sh"
 
-source ~/.proot/entryPoint.sh
+# >>>> More Zsh completion (start)
+fpath=(/opt/vagrant/embedded/gems/gems/vagrant-2.3.6/contrib/zsh $fpath)
+fpath=($ZSH/plugins/zsh-completions/src $fpath)
+compinit
+# <<<<  More Zsh completion (end)
+
+autoload -U compinit && compinit
+export VISUAL=nvim
+export EDITOR="$VISUAL"
+# vim
+bindkey jj vi-cmd-mode 
+
+# fzf commands
+export FZF_DEFAULT_COMMAND='fd --type file --follow --hidden --exclude .git'
+export FZF_CTRL_T_COMMAND='fd --type file --follow --hidden --exclude .git'
+# fall back to find
+if ! type "fd" > /dev/null; then
+  export FZF_DEFAULT_COMMAND='find . -type f'
+  export FZF_CTRL_T_COMMAND='find . -type f'
+fi
+
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+# >>>> Vagrant command completion (start)
+fpath=(/opt/vagrant/embedded/gems/2.3.3/gems/vagrant-2.3.3/contrib/zsh $fpath)
+compinit
+# <<<<  Vagrant command completion (end)
+
+# kubectl auto completion
+[[ -s "$HOME/.kubectl-auto-complete.zsh" ]] && source "$HOME/.kubectl-auto-complete.zsh"
+
+# helm auto completion
+[[ -s "$HOME/.helm-auto-complete.zsh" ]] && source "$HOME/.helm-auto-complete.zsh"
+
+
+# source my custom bin
+export PATH=$HOME/bin:$PATH
+
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+
+
+if [ -f "$HOME/.proot/entryPoint.sh" ]; then
+  source "$HOME/.proot/entryPoint.sh"
+fi
+
+if [ -f "$HOME/.aliases.sh" ]; then
+  source "$HOME/.aliases.sh"
+fi
+
+[[ -s "$HOME/.funcs.sh" ]] && source "$HOME/.funcs.sh"
+
+if [ -f "$HOME/.fzf.zsh" ]; then
+  source "$HOME/.fzf.zsh"
+fi
+
+if [ -f "$HOME/.gvm/scripts/gvm" ]; then
+  source "$HOME/.gvm/scripts/gvm"
+fi
+
+# link ~/go to the current go version used
+ln -sfn $HOME/.gvm/gos/$(gvm list | grep '=>' | awk '{print $2}') $HOME/go
+
+SUDO_EDITOR=$HOME/bin/nvim
+
+complete -C '/opt/homebrew/bin/aws_completer' aws
+
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /opt/homebrew/bin/terraform terraform
+complete -o nospace -C $GOPATH/bin/ssh-tunnel-manager tm
+complete -o nospace -C $GOPATH/bin/ssh-tunnel-manager ssh-tunnel-manager
+
