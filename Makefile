@@ -60,7 +60,8 @@ else
 		imagemagick \
 		ripgrep \
 		apt-transport-https \
-		python3-pip
+		python3-pip \
+		poppler-utils
 
  
 	
