@@ -3,7 +3,7 @@ alias open="xdg-open"
 alias o="xdg-open"
 alias down="open ~/Downloads/"
 alias fzf="fzf --preview 'bat --style=numbers --color=always --line-range :500 {}' --preview-window=right:65%"
-alias clrScreenshots="rm ~/Pictures/*"
+alias clrScreenshots="rm ~/Pictures/Screenshots/*"
 alias de="setxkbmap de"
 alias en="setxkbmap us"
 alias ar="setxkbmap ar"
@@ -28,3 +28,5 @@ alias docker-compose="docker compose"
 # Screen recording
 alias record="recordmydesktop"
 
+#STUBS
+alias ssh-stubs="ssh -i ~/.ssh/stubs 'smammetw@mars.cs.tu-dortmund.de'"

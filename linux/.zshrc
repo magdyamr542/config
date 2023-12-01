@@ -86,6 +86,7 @@ plugins=(
   colored-man-pages
   history-substring-search
   fd
+  kubectl
 )
 source $ZSH/oh-my-zsh.sh
 ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
@@ -123,7 +124,7 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=245'
 [[ -s /home/amr/.autojump/etc/profile.d/autojump.sh ]] && source /home/amr/.autojump/etc/profile.d/autojump.sh
 
 # >>>> More Zsh completion (start)
-fpath=(/opt/vagrant/embedded/gems/gems/vagrant-2.3.6/contrib/zsh $fpath)
+fpath=(/opt/vagrant/embedded/gems/gems/vagrant-2.3.7/contrib/zsh/ $fpath)
 fpath=($ZSH/plugins/zsh-completions/src $fpath)
 compinit
 # <<<<  More Zsh completion (end)
@@ -169,8 +170,11 @@ compinit
 # source my custom bin
 export PATH=$HOME/bin:$PATH
 
-# source go bin
-export PATH=$PATH:$HOME/go/bin
+# >>> coursier install directory >>>
+if [ -f "$HOME/.local/share/coursier/bin/scala" ]; then
+  export PATH="$PATH:$HOME/.local/share/coursier/bin"
+fi
+# <<< coursier install directory <<<
 
 export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
@@ -197,5 +201,11 @@ if [ -f "$HOME/.gvm/scripts/gvm" ]; then
   source "$HOME/.gvm/scripts/gvm"
 fi
 
+# link ~/go to the current go version used
+ln -sfn $HOME/.gvm/gos/$(gvm list | grep '=>' | awk '{print $2}') $HOME/go
+
 SUDO_EDITOR=$HOME/bin/nvim
-GOROOT=$HOME/go
+
+autoload -U +X bashcompinit && bashcompinit
+# aws cli completion
+complete -C '/usr/local/bin/aws_completer' aws

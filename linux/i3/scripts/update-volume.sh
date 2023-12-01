@@ -21,9 +21,4 @@ fi
 
 # show a notification with the new volume level
 volume=$(getdefaultsinkvol)
-mute=$(pactl list sinks | grep 'Mute:' | awk '{print $2}')
-if [ "$mute" == "yes" ]; then
-  notify-send -t 1500 "Volume: muted"
-else
-  notify-send -t 1500 "Volume: $volume"
-fi
+notify-send -t 1500 "Volume: $volume"
