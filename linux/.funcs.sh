@@ -156,3 +156,30 @@ awsExportCredentials () {
      aws configure list-profiles
   fi
 }
+
+# Shows the contents of commits one after the other
+# Takes the SHA of the starting commit and optionally
+# the SHA of the ending commit. If not provided, uses
+# HEAD as the ending commint
+git_show_seq () {
+  START_SHA=$1
+  END_SHA=$2
+
+  if [ -z "${END_SHA}" ]; then
+    END_SHA=HEAD
+  fi
+
+  COMMAND="git log --reverse --format='%H' $START_SHA~1..$END_SHA"
+
+  if [ -z "${START_SHA}" ]; then
+    START_SHA="--root"
+    SEPARATOR=" "
+    END_SHA="HEAD"
+    OPTION="--root HEAD"
+    COMMAND="git log --reverse --format='%H' --root HEAD"
+  fi
+
+  eval "$COMMAND" |  while read commit_hash; do 
+    git show $commit_hash
+  done
+}
