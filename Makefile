@@ -119,6 +119,7 @@ nvim:
 	chmod u+x nvim.appimage
 	mv ./nvim.appimage  $(HOMEDIR)/bin/nvim
 	@echo "installing packer"
+	rm -rf ~/.local/share/nvim 
 	git clone --depth 1 https://github.com/wbthomason/packer.nvim\
 	 ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 	nvim --headless +PackerSync +qall
