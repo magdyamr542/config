@@ -115,11 +115,13 @@ nvim:
 	mkdir -p $(HOMEDIR)/.config/
 	mkdir -p $(HOMEDIR)/bin
 	git clone https://github.com/magdyamr542/nvim $(HOMEDIR)/.config/nvim
-	curl -LO https://github.com/neovim/neovim/releases/download/v0.7.0/nvim.appimage
+	curl -LO https://github.com/neovim/neovim/releases/download/v0.9.0/nvim.appimage
 	chmod u+x nvim.appimage
 	mv ./nvim.appimage  $(HOMEDIR)/bin/nvim
-	@echo "installing neovim plugins"
-	nvim --headless +PlugInstall +qall
+	@echo "installing packer"
+	git clone --depth 1 https://github.com/wbthomason/packer.nvim\
+	 ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+	nvim --headless +PackerSync +qall
 	@echo "installed neovim. make sure to have your $(HOMEDIR)/bin directory in your PATH"
 
 nodejs:
