@@ -176,9 +176,9 @@ if [ -f "$HOME/.local/share/coursier/bin/scala" ]; then
 fi
 # <<< coursier install directory <<<
 
-export PYENV_ROOT="$HOME/.pyenv"
-command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
+command -v pyenv &> /dev/null && export PATH="$PYENV_ROOT/bin:$PATH"
+command -v pyenv &> /dev/null && eval "$(pyenv init -)"
+command -v pyenv &> /dev/null && export PYENV_ROOT="$HOME/.pyenv"
 
 
 if [ -f "$HOME/.proot/entryPoint.sh" ]; then
@@ -202,7 +202,7 @@ if [ -f "$HOME/.gvm/scripts/gvm" ]; then
 fi
 
 # link ~/go to the current go version used
-ln -sfn $HOME/.gvm/gos/$(gvm list | grep '=>' | awk '{print $2}') $HOME/go
+command -v gvm &> /dev/null && ln -sfn $HOME/.gvm/gos/$(gvm list | grep '=>' | awk '{print $2}') $HOME/go
 
 SUDO_EDITOR=$HOME/bin/nvim
 

@@ -68,6 +68,8 @@ else
 endif
 
 
+# system initial
+initial: zsh oh-my-zsh oh-my-zsh-plugins powerlevel10k zsh-final fzf
 # zsh stuff
 zsh:
 	@echo "creating symlink to .zshrc"
