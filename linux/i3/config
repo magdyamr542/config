@@ -17,8 +17,13 @@ set $right l
 # rename workspace
 bindsym $mod+n exec i3-input -F 'rename workspace to "%s"' -P 'New name for this workspace: '
 
-# take screenshot
-bindsym Print exec date -u "+%Y-%m-%d-%H-%M-%S" | xargs -I date scrot --file ~/Pictures/Screenshots/Screenshot-from-date.png && notify-send -t 1500 Screenshot "Success "
+
+# take a screenshot of a screen region 
+bindsym --release Shift+Print exec  $HOME/.config/config/linux/i3/scripts/screenshot.sh -s ~/Pictures/Screenshots/ && notify-send -t 1500 Screenshot "Success "
+
+# take a screenshot of the full window
+bindsym --release Print exec $HOME/.config/config/linux/i3/scripts/screenshot.sh  ~/Pictures/Screenshots/ && notify-send -t 1500 Screenshot "Success "
+
 
 # Your preferred application launcher
 #set $menu dmenu_run
@@ -195,3 +200,4 @@ bindsym XF86MonBrightnessDown exec --no-startup-id $HOME/.config/config/linux/i3
 # Starup
 exec --no-startup-id nm-applet #show wifi applet
 exec --no-startup-id feh --bg-scale --zoom fill ~/.wallpaper.png # set wallpaper. image in the config. a symlink needs to be created for it
+exec --no-startup-id picom -CGb
