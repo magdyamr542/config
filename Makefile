@@ -61,7 +61,9 @@ else
 		ripgrep \
 		apt-transport-https \
 		python3-pip \
-		poppler-utils
+		poppler-utils \
+		imagemagick \
+		xclip
 
  
 	
@@ -69,7 +71,7 @@ endif
 
 
 # system initial
-initial: zsh oh-my-zsh oh-my-zsh-plugins powerlevel10k zsh-final fzf
+initial: zsh oh-my-zsh 
 # zsh stuff
 zsh:
 	@echo "creating symlink to .zshrc"
@@ -261,4 +263,7 @@ endif
 i3:
 	apt install -y i3 network-manager network-manager-gnome xautolock light i3lock rofi feh scrot
 
+	
+
 .PHONY: nvim zsh install install-packages link all autojump
+
